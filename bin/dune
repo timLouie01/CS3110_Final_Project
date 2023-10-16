@@ -1,0 +1,4 @@
+(executable
+ (public_name 0_Degrees)
+ (name main)
+ (libraries 0_Degrees))
