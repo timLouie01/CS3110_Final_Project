@@ -1,2 +1,3 @@
 (library
- (name Project_0_Degrees))
+ (name Zero_Degrees)
+ (public_name Zero_Degrees))

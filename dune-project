@@ -1,26 +1,26 @@
 (lang dune 3.10)
 
-(name 0_Degrees)
+; (name 0_Degrees)
 
-(generate_opam_files true)
+; (generate_opam_files true)
 
-(source
- (github username/reponame))
+; (source
+;  (github username/reponame))
 
-(authors "Author Name")
+; (authors "Author Name")
 
-(maintainers "Maintainer Name")
+; (maintainers "Maintainer Name")
 
-(license LICENSE)
+; (license LICENSE)
 
-(documentation https://url/to/documentation)
+; (documentation https://url/to/documentation)
 
-(package
- (name 0_Degrees)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune)
- (tags
-  (topics "to describe" your project)))
+; (package
+;  (name Zero_Degrees)
+;  (synopsis "A short synopsis")
+;  (description "A longer description")
+;  (depends ocaml dune)
+;  (tags
+;   (topics "to describe" your project)))
 
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
+; ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
