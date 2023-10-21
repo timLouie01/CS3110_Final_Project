@@ -1,1 +1,1 @@
-lib/shipsBag.mli: Carrier Ship
+lib/shipsBag.mli: Ship
