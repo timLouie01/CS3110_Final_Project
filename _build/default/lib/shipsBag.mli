@@ -4,8 +4,9 @@ module type PlayerListOfShips = sig
   (* Representaiton type of list of ships *)
   type t
 
-  (* Remove carrier ship from list *)
-  val remove_Carrier: Carrier.t -> bool
+  (* val setUp:t-> bool *)
 end
 
 module Player1List:PlayerListOfShips
+
+module Player2List:PlayerListOfShips
