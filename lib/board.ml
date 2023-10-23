@@ -39,8 +39,7 @@ module BattleGround : GameBoard = struct
   let set_up_board : t =
     {
       board = Array.make_matrix 10 10 Ocean;
-      size = 10;
-      fleet = ShipsBag.build_List;
+      size = 10
     }
 
   let valid_pos (x : int) (y : int) (b : t) : bool =
