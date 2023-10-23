@@ -1,9 +1,9 @@
 # dune build
 # OCAMLPARAM: unset
 # Shared cache: disabled
-# Workspace root: /home/lol/3110/final/Project_0_Degrees
-# Auto-detected concurrency: 8
-$ /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_880036_output
+# Workspace root: /Users/timothylouie/Documents/GitHub/Project_0_Degrees
+# Auto-detected concurrency: 10
+$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_420c90_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -12,77 +12,80 @@ $ /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_880036_output
 #  ; for_host = None
 #  ; fdo_target_exe = None
 #  ; build_dir = In_build_dir "default"
-#  ; ocaml_bin = External "/home/lol/.opam/cs3110-2023fa/bin"
-#  ; ocaml = Ok External "/home/lol/.opam/cs3110-2023fa/bin/ocaml"
-#  ; ocamlc = External "/home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt"
-#  ; ocamlopt = Ok External "/home/lol/.opam/cs3110-2023fa/bin/ocamlopt.opt"
-#  ; ocamldep = Ok External "/home/lol/.opam/cs3110-2023fa/bin/ocamldep.opt"
+#  ; ocaml_bin = External "/Users/timothylouie/.opam/cs3110-2023fa/bin"
+#  ; ocaml = Ok External "/Users/timothylouie/.opam/cs3110-2023fa/bin/ocaml"
+#  ; ocamlc = External "/Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/timothylouie/.opam/cs3110-2023fa/bin/ocamldep.opt"
 #  ; ocamlmklib =
-#      Ok External "/home/lol/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
+#      Ok External "/Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
 #  ; env =
 #      map
 #        { "DUNE_OCAML_HARDCODED" :
-#            "/home/lol/.opam/cs3110-2023fa/lib/ocaml:/home/lol/.opam/cs3110-2023fa/lib"
-#        ; "DUNE_OCAML_STDLIB" : "/home/lol/.opam/cs3110-2023fa/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" : "/home/lol/3110/final/Project_0_Degrees"
+#            "/Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml:/Users/timothylouie/.opam/cs3110-2023fa/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/timothylouie/Documents/GitHub/Project_0_Degrees"
 #        ; "INSIDE_DUNE" :
-#            "/home/lol/3110/final/Project_0_Degrees/_build/default"
+#            "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/home/lol/3110/final/Project_0_Degrees/_build/install/default/lib"
+#            "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/install/default/lib"
 #        ; "OCAMLPATH" :
-#            "/home/lol/3110/final/Project_0_Degrees/_build/install/default/lib"
+#            "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/home/lol/3110/final/Project_0_Degrees/_build/install/default/lib/toplevel"
+#            "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/install/default/lib/toplevel"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
-#      [ External "/home/lol/.opam/cs3110-2023fa/lib/ocaml"
-#      ; External "/home/lol/.opam/cs3110-2023fa/lib"
+#      [ External "/Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml"
+#      ; External "/Users/timothylouie/.opam/cs3110-2023fa/lib"
 #      ]
 #  ; natdynlink_supported = true
 #  ; supports_shared_libraries = true
 #  ; ocaml_config =
 #      { version = "5.0.0"
-#      ; standard_library_default = "/home/lol/.opam/cs3110-2023fa/lib/ocaml"
-#      ; standard_library = "/home/lol/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library_default =
+#          "/Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library = "/Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml"
 #      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
-#      ; c_compiler = "gcc"
+#      ; c_compiler = "cc"
 #      ; ocamlc_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; ocamlopt_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; bytecomp_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; native_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
 #      ; cc_profile = []
-#      ; architecture = "amd64"
+#      ; architecture = "arm64"
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
-#      ; system = "linux"
-#      ; asm = [ "as" ]
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
 #      ; asm_cfi_supported = true
 #      ; with_frame_pointers = false
 #      ; ext_exe = ""
@@ -93,8 +96,8 @@ $ /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_880036_output
 #      ; os_type = "Unix"
 #      ; default_executable_name = "a.out"
 #      ; systhread_supported = true
-#      ; host = "x86_64-pc-linux-gnu"
-#      ; target = "x86_64-pc-linux-gnu"
+#      ; host = "aarch64-apple-darwin22.6.0"
+#      ; target = "aarch64-apple-darwin22.6.0"
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
@@ -114,22 +117,23 @@ $ /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_880036_output
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/board.ml) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Board.impl.d
-> File "lib/board.ml", line 52, characters 35-37:
-> 52 |         b.board.(x).(y1) <- AShip. in
->                                         ^^
-> Error: Syntax error
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/board.ml) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Board.impl.d
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/board.mli) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Board.intf.d
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmi -c -intf lib/board.mli)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I bin/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o bin/.main.eobjs/byte/dune__exe__Main.cmi -c -intf bin/main.mli)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I test/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o test/.main.eobjs/byte/dune__exe__Main.cmi -c -intf test/main.mli)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmo -c -impl lib/board.ml)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -a -o lib/Zero_Degrees.cma lib/.Zero_Degrees.objs/byte/zero_Degrees.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__ShipsBag.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Computer.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmo)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+> File "bin/main.ml", line 98, characters 0-0:
+> Error: Syntax error: ')' expected
+> File "bin/main.ml", line 70, characters 19-20:
+> 70 |       print_string (BattleGround.
+>                         ^
+>   This '(' might be unmatched
 [2]
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/ship.mli) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Ship.intf.d
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/ship.ml) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Ship.impl.d
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmi -c -intf lib/ship.mli)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmi -c -intf lib/board.mli)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmo -c -impl lib/ship.ml)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__ShipsBag.cmi -c -intf lib/shipsBag.mli)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/native/zero_Degrees__Ship.cmx -c -impl lib/ship.ml)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__ShipsBag.cmo -c -impl lib/shipsBag.ml)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I bin/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o bin/.main.eobjs/byte/dune__exe__Main.cmi -c -intf bin/main.mli)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I test/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o test/.main.eobjs/byte/dune__exe__Main.cmi -c -intf test/main.mli)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/native/zero_Degrees__ShipsBag.cmx -c -impl lib/shipsBag.ml)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I test/.main.eobjs/byte -I test/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/.main.eobjs/native/dune__exe__Main.cmx -c -impl test/main.ml)
-$ (cd _build/default && /home/lol/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I test/.main.eobjs/byte -I test/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/.main.eobjs/native/dune__exe__Main.cmx -c -impl test/main.ml)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/native/zero_Degrees__Board.cmx -c -impl lib/board.ml)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -a -o lib/Zero_Degrees.cmxa lib/.Zero_Degrees.objs/native/zero_Degrees.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Ship.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__ShipsBag.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Computer.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Board.cmx)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -shared -linkall -I lib -o lib/Zero_Degrees.cmxs lib/Zero_Degrees.cmxa)
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -o test/main.exe lib/Zero_Degrees.cmxa test/.main.eobjs/native/dune__exe__Main.cmx)

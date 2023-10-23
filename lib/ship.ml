@@ -1,11 +1,13 @@
 module type ShipClasses = sig
   type t
 
+  val get_health: t -> int 
+  val get_length :t -> int 
+  val get_type_of_Ship : t -> string
+  val get_hits :t  -> int
+
   val build_ship : string -> t
-  val health : t -> int
-  val length : t -> int
-  val ship_Type : t -> string
-  val move_ship : t -> bool
+  (* val move_ship : t -> bool *)
 end
 
 module AShip : ShipClasses = struct
@@ -24,9 +26,10 @@ module AShip : ShipClasses = struct
     length : int;
   }
 
-  let health (ship : t) : int = ship.length - ship.hits
-  let length (ship : t) : int = ship.length
-  let ship_Type (ship : t) : string = ship.type_of_Ship
+  let get_health (ship : t) : int = ship.length - ship.hits
+  let get_length (ship : t) : int = ship.length
+  let get_type_of_Ship (ship : t) : string = ship.type_of_Ship
+  let get_hits (ship : t) : int = ship.hits
 
   let build_helper (name : string) (length1 : int) : t =
     { hit_pos = []; pos = []; type_of_Ship = name; hits = 0; length = length1 }
@@ -52,5 +55,5 @@ module AShip : ShipClasses = struct
         let length = 0 in
         build_helper name length
 
-  let move_ship : t -> bool = failwith "unimplemented"
+  (* let move_ship : t -> bool = True *)
 end
