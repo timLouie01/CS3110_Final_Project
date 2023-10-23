@@ -1,9 +1,9 @@
-# dune build
+# dune exec bin/main.exe
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /Users/timothylouie/Documents/GitHub/Project_0_Degrees
 # Auto-detected concurrency: 10
-$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_420c90_output
+$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_f41eb5_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -117,23 +117,3 @@ $ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/board.ml) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Board.impl.d
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/board.mli) > _build/default/lib/.Zero_Degrees.objs/zero_Degrees__Board.intf.d
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmi -c -intf lib/board.mli)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I bin/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o bin/.main.eobjs/byte/dune__exe__Main.cmi -c -intf bin/main.mli)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I test/.main.eobjs/byte -I lib/.Zero_Degrees.objs/byte -no-alias-deps -opaque -o test/.main.eobjs/byte/dune__exe__Main.cmi -c -intf test/main.mli)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmo -c -impl lib/board.ml)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -a -o lib/Zero_Degrees.cma lib/.Zero_Degrees.objs/byte/zero_Degrees.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__ShipsBag.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Computer.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmo)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
-> File "bin/main.ml", line 98, characters 0-0:
-> Error: Syntax error: ')' expected
-> File "bin/main.ml", line 70, characters 19-20:
-> 70 |       print_string (BattleGround.
->                         ^
->   This '(' might be unmatched
-[2]
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I test/.main.eobjs/byte -I test/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/.main.eobjs/native/dune__exe__Main.cmx -c -impl test/main.ml)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/native/zero_Degrees__Board.cmx -c -impl lib/board.ml)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -a -o lib/Zero_Degrees.cmxa lib/.Zero_Degrees.objs/native/zero_Degrees.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Ship.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__ShipsBag.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Computer.cmx lib/.Zero_Degrees.objs/native/zero_Degrees__Board.cmx)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -shared -linkall -I lib -o lib/Zero_Degrees.cmxs lib/Zero_Degrees.cmxa)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -o test/main.exe lib/Zero_Degrees.cmxa test/.main.eobjs/native/dune__exe__Main.cmx)

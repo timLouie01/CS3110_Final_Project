@@ -1,12 +1,13 @@
 module type ShipClasses = sig
   type t
 
-  val get_health: t -> int 
-  val get_length :t -> int 
+  val get_health : t -> int
+  val get_length : t -> int
   val get_type_of_Ship : t -> string
-  val get_hits :t  -> int
-
+  val get_hits : t -> int
   val build_ship : string -> t
+  val set_position : t -> int -> int -> int -> int -> ((int * int) * bool) list
+  val hit_ship : t -> int * int -> int
   (* val move_ship : t -> bool *)
 end
 
@@ -19,10 +20,9 @@ module AShip : ShipClasses = struct
      string} let hits = 0 let length = 0 let non_Hit = 0 *)
 
   type t = {
-    hit_pos : (int * int) list;
-    pos : (int * int) list;
+    mutable position : ((int * int) * bool) list;
     type_of_Ship : string;
-    hits : int;
+    mutable hits : int;
     length : int;
   }
 
@@ -32,7 +32,7 @@ module AShip : ShipClasses = struct
   let get_hits (ship : t) : int = ship.hits
 
   let build_helper (name : string) (length1 : int) : t =
-    { hit_pos = []; pos = []; type_of_Ship = name; hits = 0; length = length1 }
+    { position = []; type_of_Ship = name; hits = 0; length = length1 }
 
   let build_ship (name : string) : t =
     match name with
@@ -55,5 +55,30 @@ module AShip : ShipClasses = struct
         let length = 0 in
         build_helper name length
 
-  (* let move_ship : t -> bool = True *)
+  let rec position_v (s : t) (x : int) (y1 : int) (y2 : int) :
+      ((int * int) * bool) list =
+    if y1 = y2 then ((x, y2), false) :: s.position
+    else (((x, y2), false) :: s.position) @ position_v s x (y1 - 1) y2
+
+  let rec position_h (s : t) (y : int) (x1 : int) (x2 : int) :
+      ((int * int) * bool) list =
+    if x1 = x2 then ((x1, 2), false) :: s.position
+    else (((x1, y), false) :: s.position) @ position_h s y (x1 + 1) x2
+
+  let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
+      ((int * int) * bool) list =
+    if x1 = x2 then
+      let () = s.position <- position_v s x1 (Int.max y1 y2) (Int.min y1 y2) in
+      s.position
+    else
+      let () = s.position <- position_h s y1 (Int.min x1 x2) (Int.max x1 x2) in
+      s.position
+
+  let hit_ship (s : t) (coor : int * int) : int =
+    if List.assoc coor s.position = true then get_health s
+    else
+      let () = s.hits <- s.hits + 1 in
+      let () = s.position <- List.remove_assoc coor s.position in
+      let () = s.position <- (coor, true) :: s.position in
+      get_health s
 end

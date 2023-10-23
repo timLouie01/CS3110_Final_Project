@@ -42,8 +42,8 @@ module BattleGround : GameBoard = struct
 
   let check_valid (b : t) (s : AShip.t) (x1 : int) (y1 : int) (x2 : int)
       (y2 : int) : bool =
-    (Int.abs (x1 - x2) = AShip.get_length s
-    || Int.abs (y1 - y2) = AShip.get_length s)
+    (Int.abs (x1 - x2) +1= AShip.get_length s
+    || Int.abs (y1 - y2)+1 = AShip.get_length s)
     && (0 <= x1 && x1 <= 10)
     && (0 <= x2 && x2 <= 10)
     && (0 <= y1 && y1 <= 10)
@@ -54,6 +54,7 @@ module BattleGround : GameBoard = struct
 
   let rec fillerV (b : t) (s : AShip.t) (x : int) (y1 : int) (y2 : int) :
       occupy array array =
+      (* print_endline(string_of_int(x) ^ string_of_int(y1)); *)
     if y1 = y2 then
       let () = b.board.(x).(y1) <- Ship s in
       b.board
@@ -68,7 +69,7 @@ module BattleGround : GameBoard = struct
       b.board
     else
       let () = b.board.(x1).(y) <- Ship s in
-      fillerV b s y (x1 + 1) x2
+      fillerH b s y (x1 + 1) x2
 
   let place_ship (b : t) (s : AShip.t) (x1 : int) (y1 : int) (x2 : int)
       (y2 : int) : t =
@@ -88,7 +89,7 @@ module BattleGround : GameBoard = struct
     match b.board.(x).(y) with
     | Ocean -> false
     | ship ->
-        let () = AShip.hit_ship ship (x, y) in
+        (* let () = AShip.hit_ship ship (x, y) in *)
         true
 
   let get_board (b : t) : occupy array array = b.board
