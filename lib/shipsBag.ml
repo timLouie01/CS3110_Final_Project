@@ -1,8 +1,7 @@
 open Ship
 module type PlayerListOfShips = sig
 
-  type t = {carrier : AShip.t ; battleship: AShip.t ; destroyer : AShip.t ;
-  submarine : AShip.t; patrolBoat : AShip.t}
+  type t
   val build_List : AShip.t list -> t
 
 end
@@ -25,6 +24,5 @@ module Player1List:PlayerListOfShips = struct
    let patrolBoat = AShip.build_ship(2) in 
 
    {carrier = carrier; battleship = battleship; destroyer = destroyer; submarine = submarine; patrolBoat = patrolBoat}
-
- 
+   
 end
