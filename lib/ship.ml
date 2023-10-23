@@ -2,21 +2,15 @@ module type ShipClasses = sig
   
   type t
   (* val hits : int
-  
   val non_Hit : int
   val length: int *)
   val health : t -> int
   val move_ship: t -> bool 
   val set_Length : t -> int  -> bool
 
- 
   val build_ship: int -> t
 
-
-
-
 end
-
 
 module AShip:ShipClasses = struct
   (* Maybe we can have a record whith the hit_pos field corresponding to pos the ship has been hit at
