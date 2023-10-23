@@ -1,1 +1,1 @@
-lib/board.mli: BattleShip Carrier Destroyer PatrolBoat Ship Submarine
+lib/board.mli: AShip Ship

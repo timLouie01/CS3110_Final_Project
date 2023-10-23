@@ -22,7 +22,7 @@ module type GameBoard = sig
   (* Given x and y coordinates this function checks to see if these positions
      are valid positons in the grid Returns: True if 0 <= x < n and 0 <= y < n
      and False otherwise where n = "size" of GameBoard *)
-  val valid_pos : int -> int -> t -> bool
+  (* val valid_pos : int -> int -> t -> bool *)
 
   (* Given a ship type places the ship with its head at the inputted head
      coordinate and returns a list of valid position for the tail of the given
@@ -30,14 +30,14 @@ module type GameBoard = sig
      valid and that the ship typed inputted has not already been placed position
      in the graph. Also that ship inputted has not already been placed Returns:
      List of possible locaitons to have the tail of the ship be *)
-  val ship_positons : occupy -> int -> int -> t -> int list
+  (* val ship_positons : occupy -> int -> int -> t -> int list *)
 
   (* Given a ship type places the ship with its head at the inputted head
      coordinate and returns a list of valid positosn for the tail of the given
      ship type to be [place_ship (x) (y)] Requires: That the position x,y is a
      valid position in the graph. Also that ship inputted has not already been
      placed Returns: The number of ships left to add to the grid *)
-  val place_ship : occupy -> int -> int -> int -> int -> int
+  val place_ship : occupy -> int -> int -> int -> int -> occupy array array
 
   val search_ship : int -> int -> bool
   (** Given x and y coordinates this funciton searches to see if there is a ship
