@@ -6,8 +6,8 @@ module type ShipClasses = sig
   val health : t -> int
   val move_ship: t -> bool 
 
-end
 
+end
 
 module AShip:ShipClasses = struct
   (* Maybe we can have a record whith the hit_pos field corresponding to pos the ship has been hit at

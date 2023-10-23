@@ -31,13 +31,15 @@ module AShip:ShipClasses = struct
   let health (ship:t) :int = failwith "unimplemented"
 
   let set_Length (ship: t) (n :int) = failwith "unimplemented" 
-  let build_ship (length:int) : t = failwith "unimplemented" 
+  let build_ship (length:int) : t = 
+    {hit_pos = [()];pos = [](); type_of_Ship: string; hits : int; length :int ; non_Hit : int}
+
   let move_ship: t -> bool = failwith "unimplemented" 
 end 
 
-module Carrier:ShipClasses = struct
+(* module Carrier:ShipClasses = struct
 include AShip
-
+t.lenght
 let length = 5
 
 end 
@@ -65,4 +67,4 @@ module PatrolBoat:ShipClasses= struct
   include AShip
 
   let length = 2
-end 
+end  *)

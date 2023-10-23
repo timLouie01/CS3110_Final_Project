@@ -1,1 +1,1 @@
-lib/shipsBag.mli: AShip BattleShip Carrier Destroyer PatrolBoat Ship Submarine
+lib/shipsBag.mli: AShip Ship

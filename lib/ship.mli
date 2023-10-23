@@ -11,10 +11,8 @@ module type ShipClasses = sig
        *)
   val health : t -> int
 
+
   val move_ship: t -> bool 
-
-  
-
   
 end
 
