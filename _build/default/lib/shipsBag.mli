@@ -1,12 +1,14 @@
 open Ship
 module type PlayerListOfShips = sig
 
-  (* Representaiton type of list of ships *)
-  type t = {carrier : AShip.t ; battleship: AShip.t ; destroyer : AShip.t ;
-  submarine : AShip.t; patrolBoat : AShip.t}
+  (* Representaiton type of player's collection of ships *)
+  type t 
 
-  val build_List : AShip.t list -> t
+  (* Builds a record of each of the players ships from a list of ships.  *)
+  val build_list : AShip.t list -> t
 
+  (* Removes a ship from a record documenting of each of the players ships.  *)
+  val remove_ship : t -> AShip.t -> t
 
 end
 

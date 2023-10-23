@@ -36,11 +36,11 @@ module BattleGround:GameBoard = struct
   let set_up_board (n' : int) :'a t = Array.make_matrix 10 10 occupy
 
   let valid_pos(x: int) (y: int): bool = if BattleGround.(x).(y) = Ocean then True else False
-  let ship_positons (ship:occupy) (x: int) (y: int): int list = 12 
+  let ship_positons (ship:occupy) (x: int) (y: int): int list = 12
 
   let place_ship (ship:occupy) (x1: int) (y1: int) (x2: int) (y2: int): int = failwith "unimplemented"
 
-  let search_ship (x: int) (y: int): bool= failwith "unimplemented"
+  let search_ship (x: int) (y: int): bool = failwith "unimplemented"
   let shoot (x: int) (y: int): bool = failwith "unimplemented"
 end
 
