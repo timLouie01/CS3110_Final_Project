@@ -1,9 +1,9 @@
-# dune build
+# dune exec bin/main.exe
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /Users/timothylouie/Documents/GitHub/Project_0_Degrees
 # Auto-detected concurrency: 10
-$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_89f419_output
+$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_5926d3_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -117,7 +117,13 @@ $ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; windows_unicode = false
 #      }
 #  }
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/native/zero_Degrees__ShipsBag.cmx -c -impl lib/shipsBag.ml)
+> File "lib/shipsBag.ml", line 15, characters 28-37:
+> 15 |   let ship_bag = {carrier = Carrier.t ; battleship = BattleShip.t ; destoryer = Destroyer.t ;
+>                                  ^^^^^^^^^
+> Error: Unbound value Carrier.t
+[2]
 $ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
-> File "bin/main.ml", line 44, characters 80-80:
+> File "bin/main.ml", line 53, characters 77-77:
 > Error: Syntax error
 [2]

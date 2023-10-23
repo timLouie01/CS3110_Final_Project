@@ -4,13 +4,13 @@ module type ShipClasses = sig
   type t
 
   (* Tracking number of hits ship has taken *)
-  val hits : int
+  (* val hits : int *)
   
   (* Trachking number of nonhit position of a ship *)
-  val non_Hit : int
+  (* val non_Hit : int *)
 
   (* Trachking length *)
-  val length: int
+  (* val length: int *)
 
   (** [health ship1]
   Returnes: the "health" of the ship1
@@ -32,7 +32,7 @@ end
 
 module AShip:ShipClasses
 
-module Carrier:ShipClasses
+(* module Carrier:ShipClasses
 
 module BattleShip:ShipClasses
 
@@ -40,4 +40,4 @@ module Destroyer:ShipClasses
 
 module Submarine:ShipClasses
 
-module PatrolBoat:ShipClasses
+module PatrolBoat:ShipClasses *)

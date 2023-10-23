@@ -9,6 +9,8 @@
    Zero_Degrees.cmxa
    board.ml
    board.mli
+   computer.ml
+   computer.mli
    dune-package
    opam
    ship.ml
@@ -23,6 +25,10 @@
    zero_Degrees__Board.cmt
    zero_Degrees__Board.cmti
    zero_Degrees__Board.cmx
+   zero_Degrees__Computer.cmi
+   zero_Degrees__Computer.cmt
+   zero_Degrees__Computer.cmti
+   zero_Degrees__Computer.cmx
    zero_Degrees__Ship.cmi
    zero_Degrees__Ship.cmt
    zero_Degrees__Ship.cmti
@@ -55,6 +61,13 @@
       (obj_name zero_Degrees__Board)
       (visibility public)
       (source (path Board) (intf (path board.mli)) (impl (path board.ml))))
+     (module
+      (obj_name zero_Degrees__Computer)
+      (visibility public)
+      (source
+       (path Computer)
+       (intf (path computer.mli))
+       (impl (path computer.ml))))
      (module
       (obj_name zero_Degrees__Ship)
       (visibility public)
