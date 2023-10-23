@@ -1,0 +1,30 @@
+---
+group:
+  - name: Luke Shao
+    netid: lys8
+  - name: Timothy Louie
+    netid: tjl96
+  - name: Cynthia Li
+    netid: csl97
+
+pm:
+  name: Cassidy Langenfeld
+  netid: cml297
+
+publish: true
+title: "Battleship: Classic and Modified"
+git-repo: "https://github.coecis.cornell.edu/tjl96/Project_0_Degrees"
+
+demo-video-url: ""
+
+desc: >
+  Our project is the game of battleship. It enables a user to play the classic game 
+  of battleship as well as a modified version with additional functions each turn. 
+  Playing against our program, the player will be able to set the positions of each ship, 
+  and choose positions to shoot on our program's board. In the modified version of our game, 
+  the player will be able to move their ship in game, use different types of ammunition, 
+  and customize the size of the game board. 
+
+  An interface in the terminal will enable the user to see their board, and a blank 
+  version of the opponent's board (AKA the tracking board) with shots/hits they've 
+  already played. 
