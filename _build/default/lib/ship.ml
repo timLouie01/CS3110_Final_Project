@@ -3,57 +3,61 @@ module type ShipClasses = sig
 
   val get_health : t -> int
   val get_length : t -> int
-  val get_type_of_Ship : t -> string
+  val get_type_of_ship : t -> string
   val get_hits : t -> int
   val build_ship : string -> t
   val set_position : t -> int -> int -> int -> int -> ((int * int) * bool) list
   val hit_ship : t -> int * int -> int
   (* val move_ship : t -> bool *)
-end
+  val get_sunk : t -> bool
+  val set_sunk : t -> t 
+
+end 
 
 module AShip : ShipClasses = struct
   (* Maybe we can have a record whith the hit_pos field corresponding to pos the
      ship has been hit at and the pos list correspoding to int positons that the
-     ship exists at still -> Represengitn it in this way could help with output
+     ship exists at still -> Representing it in this way could help with output
      interface*)
-  (* type t = {hit_pos:(int*int) list;pos: (int *int) list; type_of_Ship:
+  (* type t = {hit_pos:(int*int) list;pos: (int *int) list; type_of_ship:
      string} let hits = 0 let length = 0 let non_Hit = 0 *)
 
   type t = {
     mutable position : ((int * int) * bool) list;
-    type_of_Ship : string;
+    type_of_ship : string;
     mutable hits : int;
     length : int;
+    sunk : bool
   }
 
   let get_health (ship : t) : int = ship.length - ship.hits
   let get_length (ship : t) : int = ship.length
-  let get_type_of_Ship (ship : t) : string = ship.type_of_Ship
+  let get_type_of_ship (ship : t) : string = ship.type_of_ship
   let get_hits (ship : t) : int = ship.hits
 
-  let build_helper (name : string) (length1 : int) : t =
-    { position = []; type_of_Ship = name; hits = 0; length = length1 }
+  let build_helper (name : string) (length1 : int) (sunk1 : bool) : t =
+    { position = []; type_of_ship = name; hits = 0; length = length1; sunk = sunk1}
 
   let build_ship (name : string) : t =
     match name with
     | "Carrier" ->
         let length = 5 in
-        build_helper name length
+        build_helper name length false
     | "Battleship" ->
         let length = 4 in
-        build_helper name length
+        build_helper name length false
     | "Destoryer" ->
         let length = 3 in
-        build_helper name length
+        build_helper name length false
     | "Submarine" ->
         let length = 3 in
-        build_helper name length
+        build_helper name length false
     | "Patrol Boat" ->
         let length = 2 in
-        build_helper name length
+        build_helper name length false
     | _ ->
         let length = 0 in
-        build_helper name length
+        build_helper name length false
 
   let rec position_v (s : t) (x : int) (y1 : int) (y2 : int) :
       ((int * int) * bool) list =
@@ -81,4 +85,11 @@ module AShip : ShipClasses = struct
       let () = s.position <- List.remove_assoc coor s.position in
       let () = s.position <- (coor, true) :: s.position in
       get_health s
+
+  (* Returns true if the ship has sunk. Returns false if the ship has not sunk. *)
+  let get_sunk (ship : t) : bool = ship.sunk
+
+  (* Returns a copy of the ship with the sunk element set to true. To be called 
+     when the ship is sunk *)
+  let set_sunk (ship : t) : t = {ship with sunk = true}
 end

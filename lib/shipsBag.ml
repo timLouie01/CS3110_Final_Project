@@ -20,8 +20,8 @@ end
    the ship has sunk). *)
 module Player1List:PlayerListOfShips = struct
 
-  type t = {carrier : AShip.t ; battleship: AShip.t ; destroyer : AShip.t ;
-  submarine : AShip.t; patrolBoat : AShip.t}
+  type t = {mutable carrier : AShip.t ; mutable battleship: AShip.t ; mutable destroyer : AShip.t ;
+  mutable submarine : AShip.t; mutable patrolBoat : AShip.t}
 
   let build_bag : t =
     let carrier = AShip.build_ship("Carrier") in 
@@ -42,6 +42,13 @@ module Player1List:PlayerListOfShips = struct
   let get_patrolBoat (bag: t):AShip.t = 
     bag.patrolBoat
 
-  let remove_ship (player_ships : t) (sunk_ship : AShip.t) : t = failwith "unimplemented"
+  let remove_ship (player_ships : t) (sunk_ship : AShip.t) : t = 
+    let ship_type = AShip.get_type_of_ship sunk_ship  in 
+      match ship_type with 
+      | "Carrier" -> {player_ships with carrier = (AShip.set_sunk sunk_ship)} 
+      | "Battleship" -> {player_ships with battleship = (AShip.set_sunk sunk_ship)} 
+      | "Destroyer" -> {player_ships with destroyer = (AShip.set_sunk sunk_ship)} 
+      | "Submarine" -> {player_ships with submarine = (AShip.set_sunk sunk_ship)} 
+      | _ -> {player_ships with patrolBoat = (AShip.set_sunk sunk_ship)} 
 
 end
