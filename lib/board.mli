@@ -7,9 +7,8 @@ module type GameBoard = sig
 
   (* Variant Data type at a position *)
   type occupy =
-  | Ocean
-  | Ship of AShip.t
-
+    | Ocean
+    | Ship of AShip.t
 
   (* Creates GameBoard of length and width = inputted integer [set_board l]
      Returns: Returns GameBoard representaiton Requires: l >= 10 SideEffect:
@@ -34,23 +33,17 @@ module type GameBoard = sig
      ship type to be [place_ship (x) (y)] Requires: That the position x,y is a
      valid position in the graph. Also that ship inputted has not already been
      placed Returns: The number of ships left to add to the grid *)
-     val place_ship :
-     t -> AShip.t -> int -> int -> int -> int -> t
+  val place_ship : t -> AShip.t -> int -> int -> int -> int -> t
 
-  val search_ship : int -> int -> bool
-  (** Given x and y coordinates this funciton searches to see if there is a ship
-      at that position in the graph [search_ship x y] Requires: That the
-      position x,y is a valid position in the graph Returns: True if part of a
-      ship is at the inputted positon (x,y) in the GameBoard and False otherwise *)
-
-  val shoot : int -> int -> bool
-  (** Given x and y coordinates this funciton searches to see if there is a ship
+  val shoot : t -> int -> int -> bool
+  (** Given x and y coordinates this function searches to see if there is a ship
       at that position in the graph and if so shoots/hits that part of the ship
       [shoot x y] Requires: That the position x,y is a valid position in the
       graph Returns: True if part of a ship is at the inputted positon (x,y) in
       the GameBoard and False otherwise *)
-    val get_board :t -> occupy array array
-    val get_pos: t -> int -> int -> occupy
+
+  val get_board : t -> occupy array array
+  val get_pos : t -> int -> int -> occupy
 end
 
 module BattleGround : GameBoard
