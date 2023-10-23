@@ -18,13 +18,13 @@ module Player1List:PlayerListOfShips = struct
   submarine : AShip.t; patrolBoat : AShip.t}
 
   let build_list (ship: AShip.t list): t =
-    let carrier = AShip.build_ship(5) in 
-    let battleship = AShip.build_ship(4) in
-    let destroyer= AShip.build_ship(3) in 
-    let submarine = AShip.build_ship(3) in 
-    let patrolBoat = AShip.build_ship(2) in 
+    let carrier = AShip.build_ship("Carrier") in 
+    let battleship = AShip.build_ship("Battleship") in
+    let destroyer= AShip.build_ship("Destoryer") in 
+    let submarine = AShip.build_ship("Submarine") in 
+    let patrolBoat = AShip.build_ship("Patrol Boat") in 
       {carrier = carrier; battleship = battleship; destroyer = destroyer; submarine = submarine; patrolBoat = patrolBoat}
   
-  let remove_ship (player_ships : t) (sunk_ship : AShip.t) : t =
+  let remove_ship (player_ships : t) (sunk_ship : AShip.t) : t = failwith "unimplemented"
 
 end
