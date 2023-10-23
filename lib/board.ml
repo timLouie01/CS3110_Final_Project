@@ -87,7 +87,9 @@ module BattleGround : GameBoard = struct
   let shoot (b : t) (x : int) (y : int) : bool =
     match b.board.(x).(y) with
     | Ocean -> false
-    | ship -> true
+    | ship ->
+        let () = AShip.hit_ship ship (x, y) in
+        true
 
   let get_board (b : t) : occupy array array = b.board
   let get_pos (b : t) (x : int) (y : int) : occupy = b.board.(x).(y)
