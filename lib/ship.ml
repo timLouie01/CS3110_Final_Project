@@ -20,7 +20,7 @@ module AShip:ShipClasses = struct
   type t = {hit_pos:(int*int) list;pos: (int *int) list; type_of_Ship: string; hits : int; length :int}
 
   let health (ship:t) :int = 
-    ship.length - ship.hits
+    (ship.length - ship.hits)
 
   let build_helper (name: string) (length:int):t =
     {hit_pos = [];pos = []; type_of_Ship = name; hits = 0 ; length = length}
@@ -34,7 +34,7 @@ module AShip:ShipClasses = struct
     | _ -> let length = 0 in build_helper (name) (length)
 
   let move_ship: t -> bool = failwith "unimplemented" 
-  
+
 end 
 
 

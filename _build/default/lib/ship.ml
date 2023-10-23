@@ -1,22 +1,13 @@
 module type ShipClasses = sig
   
   type t
-  (* val hits : int
   
-  val non_Hit : int
-  val length: int *)
+  val build_ship: string -> t
   val health : t -> int
   val move_ship: t -> bool 
-  val set_Length : t -> int  -> bool
-
- 
-  val build_ship: int -> t
-
-
 
 
 end
-
 
 module AShip:ShipClasses = struct
   (* Maybe we can have a record whith the hit_pos field corresponding to pos the ship has been hit at
@@ -26,45 +17,24 @@ module AShip:ShipClasses = struct
   let length = 0
   let non_Hit =  0 *)
 
-  type t = {hit_pos:(int*int) list;pos: (int *int) list; type_of_Ship: string; hits : int; length :int ; non_Hit : int}
+  type t = {hit_pos:(int*int) list;pos: (int *int) list; type_of_Ship: string; hits : int; length :int}
 
-  let health (ship:t) :int = failwith "unimplemented"
+  let health (ship:t) :int = 
+    (ship.length - ship.hits)
 
-  let set_Length (ship: t) (n :int) = failwith "unimplemented" 
-  let build_ship (length:int) : t = 
-    {hit_pos = [()];pos = [](); type_of_Ship: string; hits : int; length :int ; non_Hit : int}
+  let build_helper (name: string) (length:int):t =
+    {hit_pos = [];pos = []; type_of_Ship = name; hits = 0 ; length = length}
+  let build_ship (name:string) : t = 
+    match name with
+    | "Carrier" -> let length = 5 in build_helper (name) (length)
+    | "Battleship"-> let length = 4 in build_helper (name) (length)
+    | "Destoryer" -> let length = 3 in build_helper (name) (length)
+    | "Submarine" -> let length = 3 in build_helper (name) (length)
+    | "Patrol Boat" -> let length = 2 in build_helper (name) (length)
+    | _ -> let length = 0 in build_helper (name) (length)
 
   let move_ship: t -> bool = failwith "unimplemented" 
-end 
-
-(* module Carrier:ShipClasses = struct
-include AShip
-t.lenght
-let length = 5
 
 end 
 
 
-module BattleShip:ShipClasses= struct
-  include AShip
-
-  let length = 4
-end 
-
-module Destroyer:ShipClasses= struct
-  include AShip
-
-  let length = 3
-end 
-
-module Submarine:ShipClasses= struct
-  include AShip
-
-  let length = 3
-end 
-
-module PatrolBoat:ShipClasses= struct
-  include AShip
-
-  let length = 2
-end  *)

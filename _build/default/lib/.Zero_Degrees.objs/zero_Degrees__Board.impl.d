@@ -1,1 +1,1 @@
-lib/board.ml: BattleShip Carrier Destroyer PatrolBoat Ship Submarine
+lib/board.ml: AShip Array BattleGround Ship

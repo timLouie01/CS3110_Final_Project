@@ -28,7 +28,7 @@ let p2_Board = BattleGround.set_up_board (avg_size) ; *)
 print_endline ("Okay great Captain " ^ player_1_name ^ " we will play on a battle grid of size of " ^ string_of_int(p1_size) ^ " x " ^string_of_int(p1_size));
 
 print_endline ("You will place 5 ships: 1 Carrier ship 1 BattleShip 1 Destoryer 1 Submarine 1 PatrolBoat");
-Player1List.t = 
+(* Player1List.t =  *)
 
 
 
