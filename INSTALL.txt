@@ -1,0 +1,10 @@
+Open a terminal for this project and run the following:
+1. dune build 
+2. make game
+
+Then you will be begin the game and be prompted
+to input head and tail coordiantes for each of your
+5 Ships.
+
+Lastly the program will print out a simple representaiton 
+of your grid.
