@@ -15,4 +15,4 @@ test:
 
 zip:
 	rm -f Project_0_Degrees.zip
-	zip -r Project_0_Degrees.zip
+	zip -r Project_0_Degrees.zip .
