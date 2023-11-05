@@ -9,6 +9,8 @@ module type GameBoard = sig
   type occupy =
     | Ocean
     | Ship of AShip.t
+    | Hit
+    | Miss
 
   (* Creates GameBoard of length and width = inputted integer [set_board l]
      Returns: Returns GameBoard representaiton Requires: l >= 10 SideEffect:

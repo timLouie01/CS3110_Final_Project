@@ -10,6 +10,7 @@ module type ShipClasses = sig
   val get_type_of_ship : t -> string
   val get_hits : t -> int
   val build_ship : string -> t
+  (* val set_position : t -> int -> int -> int -> int -> unit *)
   val set_position : t -> int -> int -> int -> int -> ((int * int) * bool) list
   val hit_ship : t -> int * int -> int
     
@@ -18,6 +19,8 @@ module type ShipClasses = sig
   (* Returns a copy of the ship with the sunk element set to true. To be called 
      when the ship is sunk *)
   val set_sunk : t -> t 
+
+  val get_pos : t -> int -> int -> bool
 
   (* val move_ship : t -> bool *)
 end

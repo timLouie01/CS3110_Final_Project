@@ -2,6 +2,7 @@ open Zero_Degrees
 open Board
 open ShipsBag
 open Ship
+open Computer
 
 (* let rec printOutC (battleGround_Input : BattleGround.t) (fixed_row : int)
    (col : int) : unit = if col > 9 then print_endline "" else match
@@ -13,10 +14,31 @@ open Ship
    printOutC battleGround_Input row 0; print_endline ""; printOutR
    battleGround_Input (row + 1) *)
 
-let rec horizontal_Lines (size: int): string = 
-                    
-   if size > 0 then "----" ^ horizontal_Lines(size-1)
-   else ""
+let rec horizontal_Lines (size : int) : string =
+  if size > 0 then "----" ^ horizontal_Lines (size - 1) else ""
+
+let print_Grid (grid : BattleGround.occupy array array) =
+  for y = 0 to 9 do
+    (* if y = 0 then print_string(horizontal_Lines (Array.length(grid))); *)
+    for x = 0 to 9 do
+      if x = 0 then print_string "|" else print_string "";
+      match Array.get (Array.get grid x) y with
+      | BattleGround.Ocean ->
+          let () = print_string " o |" in
+          if x = 9 then
+            let () = print_newline () in
+            let () = print_string (horizontal_Lines (Array.length grid)) in
+            print_endline ""
+      | BattleGround.Ship s ->
+          let () = print_string " x |" in
+          if x = 9 then
+            let () = print_newline () in
+            let () = print_string (horizontal_Lines (Array.length grid)) in
+            print_endline ""
+    done
+    (* print_newline() *)
+    (* print_endline(horizontal_Lines (Array.length(grid))) *)
+  done
 
 let helper_To_Print2 (row : BattleGround.occupy array) =
   Array.iter
@@ -29,8 +51,10 @@ let helper_To_Print2 (row : BattleGround.occupy array) =
 let helper_To_Print1 (grid : BattleGround.occupy array array) =
   Array.iter
     (fun row ->
-      let () = print_string("|") in let () = helper_To_Print2 row in
-      let () = print_endline "" in print_endline(horizontal_Lines(Array.length (grid))))
+      let () = print_string "|" in
+      let () = helper_To_Print2 row in
+      let () = print_endline "" in
+      print_endline (horizontal_Lines (Array.length grid)))
     grid
 
 let () =
@@ -62,12 +86,12 @@ let () =
     ("Okay great Captain " ^ player_1_name
    ^ " we will play on a battle grid of size of 10 x 10");
 
-   print_newline();
+  print_newline ();
   print_endline
     ("Captain " ^ player_1_name
    ^ " you will place 5 ships: 1 Carrier ship 1 BattleShip 1 Destoryer 1 "
    ^ "Submarine 1 PatrolBoat");
-   print_newline();
+  print_newline ();
   let p1ShipBag = Player1List.build_bag in
   let p1BattleGrid = BattleGround.set_up_board in
 
@@ -76,17 +100,17 @@ let () =
     ("First Provide a head and tail positon for your "
     ^ (p1ShipBag |> Player1List.get_Carrier |> AShip.get_type_of_ship)
     ^ " (Which has a length of 5)");
-    print_newline();
+  print_newline ();
   print_endline "Head position in the fromat x y";
   let head_Pos_List = String.split_on_char ' ' (read_line ()) in
   let x1 = int_of_string (List.nth head_Pos_List 0) in
   let y1 = int_of_string (List.nth head_Pos_List 1) in
-  print_newline();
+  print_newline ();
   print_endline "Tail position in the format x y";
   let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
   let x2 = int_of_string (List.nth tail_Pos_List 0) in
   let y2 = int_of_string (List.nth tail_Pos_List 1) in
-  print_newline();
+  print_newline ();
   let ship_to_place = p1ShipBag |> Player1List.get_Carrier in
 
   let p1BattleGrid =
@@ -98,124 +122,94 @@ let () =
     ("Now Provide a head and tail positon for your "
     ^ (p1ShipBag |> Player1List.get_Battleship |> AShip.get_type_of_ship)
     ^ " (Which has a length of 4)");
-    print_newline();
+  print_newline ();
   print_endline "Head position in the fromat x y";
   let head_Pos_List = String.split_on_char ' ' (read_line ()) in
   let x1 = int_of_string (List.nth head_Pos_List 0) in
   let y1 = int_of_string (List.nth head_Pos_List 1) in
-  print_newline();
+  print_newline ();
   print_endline "Tail position in the format x y";
   let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
   let x2 = int_of_string (List.nth tail_Pos_List 0) in
   let y2 = int_of_string (List.nth tail_Pos_List 1) in
-  print_newline();
+  print_newline ();
   let ship_to_place = p1ShipBag |> Player1List.get_Battleship in
 
   let p1BattleGrid =
     BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
   in
 
-   (* Destroyer placement *)
-   print_endline
-   ("Now Provide a head and tail positon for your "
-   ^ (p1ShipBag |> Player1List.get_Destroyer |> AShip.get_type_of_ship)
-   ^ " (Which has a length of 3)");
-   print_newline();
- print_endline "Head position in the fromat x y";
- let head_Pos_List = String.split_on_char ' ' (read_line ()) in
- let x1 = int_of_string (List.nth head_Pos_List 0) in
- let y1 = int_of_string (List.nth head_Pos_List 1) in
- print_newline();
- print_endline "Tail position in the format x y";
- let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
- let x2 = int_of_string (List.nth tail_Pos_List 0) in
- let y2 = int_of_string (List.nth tail_Pos_List 1) in
- print_newline();
- let ship_to_place = p1ShipBag |> Player1List.get_Destroyer in
+  (* Destroyer placement *)
+  print_endline
+    ("Now Provide a head and tail positon for your "
+    ^ (p1ShipBag |> Player1List.get_Destroyer |> AShip.get_type_of_ship)
+    ^ " (Which has a length of 3)");
+  print_newline ();
+  print_endline "Head position in the fromat x y";
+  let head_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x1 = int_of_string (List.nth head_Pos_List 0) in
+  let y1 = int_of_string (List.nth head_Pos_List 1) in
+  print_newline ();
+  print_endline "Tail position in the format x y";
+  let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x2 = int_of_string (List.nth tail_Pos_List 0) in
+  let y2 = int_of_string (List.nth tail_Pos_List 1) in
+  print_newline ();
+  let ship_to_place = p1ShipBag |> Player1List.get_Destroyer in
 
- let p1BattleGrid =
-   BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
- in
+  let p1BattleGrid =
+    BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
+  in
 
-(* Submarine placement *)
-print_endline
-("Now Provide a head and tail positon for your "
-^ (p1ShipBag |> Player1List.get_Submarine |> AShip.get_type_of_ship)
-^ " (Which has a length of 3)");
-print_newline();
-print_endline "Head position in the fromat x y";
-let head_Pos_List = String.split_on_char ' ' (read_line ()) in
-let x1 = int_of_string (List.nth head_Pos_List 0) in
-let y1 = int_of_string (List.nth head_Pos_List 1) in
-print_newline();
-print_endline "Tail position in the format x y";
-let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
-let x2 = int_of_string (List.nth tail_Pos_List 0) in
-let y2 = int_of_string (List.nth tail_Pos_List 1) in
-print_newline();
-let ship_to_place = p1ShipBag |> Player1List.get_Submarine in
+  (* Submarine placement *)
+  print_endline
+    ("Now Provide a head and tail positon for your "
+    ^ (p1ShipBag |> Player1List.get_Submarine |> AShip.get_type_of_ship)
+    ^ " (Which has a length of 3)");
+  print_newline ();
+  print_endline "Head position in the fromat x y";
+  let head_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x1 = int_of_string (List.nth head_Pos_List 0) in
+  let y1 = int_of_string (List.nth head_Pos_List 1) in
+  print_newline ();
+  print_endline "Tail position in the format x y";
+  let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x2 = int_of_string (List.nth tail_Pos_List 0) in
+  let y2 = int_of_string (List.nth tail_Pos_List 1) in
+  print_newline ();
+  let ship_to_place = p1ShipBag |> Player1List.get_Submarine in
 
-let p1BattleGrid =
-BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
-in
+  let p1BattleGrid =
+    BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
+  in
 
-(* Patrol Boat placement *)
-print_endline
-("Now Provide a head and tail positon for your "
-^ (p1ShipBag |> Player1List.get_patrolBoat |> AShip.get_type_of_ship)
-^ " (Which has a length of 2)");
-print_newline();
-print_endline "Head position in the fromat x y";
-let head_Pos_List = String.split_on_char ' ' (read_line ()) in
-let x1 = int_of_string (List.nth head_Pos_List 0) in
-let y1 = int_of_string (List.nth head_Pos_List 1) in
-print_newline();
-print_endline "Tail position in the format x y";
-let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
-let x2 = int_of_string (List.nth tail_Pos_List 0) in
-let y2 = int_of_string (List.nth tail_Pos_List 1) in
-print_newline();
-let ship_to_place = p1ShipBag |> Player1List.get_patrolBoat in
+  (* Patrol Boat placement *)
+  print_endline
+    ("Now Provide a head and tail positon for your "
+    ^ (p1ShipBag |> Player1List.get_patrolBoat |> AShip.get_type_of_ship)
+    ^ " (Which has a length of 2)");
+  print_newline ();
+  print_endline "Head position in the fromat x y";
+  let head_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x1 = int_of_string (List.nth head_Pos_List 0) in
+  let y1 = int_of_string (List.nth head_Pos_List 1) in
+  print_newline ();
+  print_endline "Tail position in the format x y";
+  let tail_Pos_List = String.split_on_char ' ' (read_line ()) in
+  let x2 = int_of_string (List.nth tail_Pos_List 0) in
+  let y2 = int_of_string (List.nth tail_Pos_List 1) in
+  print_newline ();
+  let ship_to_place = p1ShipBag |> Player1List.get_patrolBoat in
 
-let p1BattleGrid =
-BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
-in
-  (* print_endline "reached"; *)
+  let p1BattleGrid =
+    BattleGround.place_ship p1BattleGrid ship_to_place x1 y1 x2 y2
+  in
+  print_Grid (BattleGround.get_board p1BattleGrid);
 
-  (* printOutR p1BattleGrid 0 ; *)
-  (* let () = Array.iter(fun row -> (Array.iter (fun elem -> match elem with |
-     Ocean -> print_string "." | Ship s -> print_string "x";) (row)))
-     (BattleGround.get_board(p1BattleGrid)); *)
+  (* print_endline(" "^ horizontal_Lines(Array.length (BattleGround.get_board
+     p1BattleGrid ))); helper_To_Print1 (BattleGround.get_board
+     p1BattleGrid); *)
+  print_endline "Your Battle Grid is set!!";
 
-  (* let testThis = Array.make_matrix 10 10 0 in
-
-     let helper_To_Print (row :int array) = Array.iter (fun elem -> match elem
-     with | -> print_string("x") | Ocean -> print_string("o")) row in
-
-     let () = Array.iter (fun row -> let () = helper_To_Print row in
-     print_endline("");) testThis in *)
-   print_endline(" "^ horizontal_Lines(Array.length (BattleGround.get_board p1BattleGrid )));
-  helper_To_Print1 (BattleGround.get_board p1BattleGrid);
-
-  print_endline "Your Battle Grid is set!!"
-
-(* Player1List.t = *)
-
-(* print_endline ("Captain " ^ player_1_name ^ "enter the coordiante of where
-   you would like to the head of your carrier ship to be:"); let carrier_head =
-   read_line() in let corr_list = String.split_on_char ' ' carrier_head in let
-   x1 = int_of_string(List.nth corr_list 0 )in let y1 = int_of_string (List.nth
-   corr_list 1) in
-
-   let p1Carrier = Carrier.build_ship 5 in
-
-   let tail_pos = BattleGround.ship_positons (Carrier p1Carrier) x1 y1 in let
-   tail_pos_strings= List.fold_left (fun add p -> add ^ (string_of_int p)) ""
-   tail_pos
-
-   print_endline (player_1_name ^" enter the one of the following allowed tail
-   coordiantes of your carrier ship:" ^ (String.concat ", " tail_pos)); let
-   carrier_tail = read_line() in let corr_list= String.split_on_char ' '
-   carrier_head in let x2= List.nth corr_list 0 in let y2 = List.nth corr_list 1
-   in print_endline (player_1_name ^" you succesful placed your Carrier ship
-   at"); *)
+  print_endline "The health of your ships: ";
+  Player1List.list_health p1ShipBag

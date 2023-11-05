@@ -2,10 +2,14 @@ open Ship
 open ShipsBag
 
 (* The signature of the GameBoard *)
+(* My Board = Ocean and Ship and HitShip *)
+(* Oppoent Baord = Ocean and Hit misses*)
 module type GameBoard = sig
   type occupy =
     | Ocean
     | Ship of AShip.t
+    | Hit
+    | Miss
 
   type t
 
@@ -20,6 +24,8 @@ module BattleGround : GameBoard = struct
   type occupy =
     | Ocean
     | Ship of AShip.t
+    | Hit
+    | Miss
   (* | Carrier of AShip.t | BattleShip of AShip.t | Destroyer of AShip.t |
      Submarine of AShip.t | PatrolBoat of AShip.t *)
 
@@ -42,8 +48,8 @@ module BattleGround : GameBoard = struct
 
   let check_valid (b : t) (s : AShip.t) (x1 : int) (y1 : int) (x2 : int)
       (y2 : int) : bool =
-    (Int.abs (x1 - x2) +1= AShip.get_length s
-    || Int.abs (y1 - y2)+1 = AShip.get_length s)
+    (Int.abs (x1 - x2) + 1 = AShip.get_length s
+    || Int.abs (y1 - y2) + 1 = AShip.get_length s)
     && (0 <= x1 && x1 <= 10)
     && (0 <= x2 && x2 <= 10)
     && (0 <= y1 && y1 <= 10)
@@ -54,7 +60,7 @@ module BattleGround : GameBoard = struct
 
   let rec fillerV (b : t) (s : AShip.t) (x : int) (y1 : int) (y2 : int) :
       occupy array array =
-      (* print_endline(string_of_int(x) ^ string_of_int(y1)); *)
+    (* print_endline(string_of_int(x) ^ string_of_int(y1)); *)
     if y1 = y2 then
       let () = b.board.(x).(y1) <- Ship s in
       b.board
@@ -73,6 +79,7 @@ module BattleGround : GameBoard = struct
 
   let place_ship (b : t) (s : AShip.t) (x1 : int) (y1 : int) (x2 : int)
       (y2 : int) : t =
+    let pos = AShip.set_position s x1 y1 x2 y2 in
     let check = check_valid b s x1 y1 x2 y2 in
     if check then
       if x1 = x2 then
@@ -88,8 +95,8 @@ module BattleGround : GameBoard = struct
   let shoot (b : t) (x : int) (y : int) : bool =
     match b.board.(x).(y) with
     | Ocean -> false
-    | ship ->
-        (* let () = AShip.hit_ship ship (x, y) in *)
+    | Ship a ->
+        let health = AShip.hit_ship a (x, y) in
         true
 
   let get_board (b : t) : occupy array array = b.board
