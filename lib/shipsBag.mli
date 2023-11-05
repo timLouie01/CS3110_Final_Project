@@ -16,6 +16,9 @@ module type PlayerListOfShips = sig
   (* Removes a ship from a record documenting of each of the players ships.  *)
   val remove_ship : t -> AShip.t -> t
 
+  (* List out health of all ships *)
+  val list_health : t -> unit
+
 end
 
 module Player1List:PlayerListOfShips

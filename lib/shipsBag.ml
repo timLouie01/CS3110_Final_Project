@@ -13,6 +13,8 @@ module type PlayerListOfShips = sig
 
   val remove_ship : t -> AShip.t -> t
 
+  val list_health : t -> unit
+
 end
 
 (* The bag of ships alloted to player 1. Players start with one of each ship.
@@ -51,4 +53,10 @@ module Player1List:PlayerListOfShips = struct
       | "Submarine" -> {player_ships with submarine = (AShip.set_sunk sunk_ship)} 
       | _ -> {player_ships with patrolBoat = (AShip.set_sunk sunk_ship)} 
 
+  let list_health (bag: t) : unit = 
+    print_endline("Carrier Ship Health " ^ string_of_int(AShip.get_health(bag.carrier)));
+    print_endline("Battleship Ship Health " ^ string_of_int(AShip.get_health(bag.battleship)));
+    print_endline("Destroyer Ship Health " ^ string_of_int(AShip.get_health(bag.destroyer)));
+    print_endline("Submarine Ship Health " ^ string_of_int(AShip.get_health(bag.submarine)));
+    print_endline("Patrol Boat Ship Health " ^ string_of_int(AShip.get_health(bag.patrolBoat)))
 end

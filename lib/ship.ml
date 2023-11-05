@@ -6,11 +6,14 @@ module type ShipClasses = sig
   val get_type_of_ship : t -> string
   val get_hits : t -> int
   val build_ship : string -> t
+  (* val set_position : t -> int -> int -> int -> int -> unit *)
   val set_position : t -> int -> int -> int -> int -> ((int * int) * bool) list
   val hit_ship : t -> int * int -> int
   (* val move_ship : t -> bool *)
   val get_sunk : t -> bool
   val set_sunk : t -> t 
+
+  val get_pos : t -> int -> int -> bool
 
 end 
 
@@ -69,13 +72,15 @@ module AShip : ShipClasses = struct
     if x1 = x2 then ((x1, 2), false) :: s.position
     else (((x1, y), false) :: s.position) @ position_h s y (x1 + 1) x2
 
+  (* let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
+    unit = *)
   let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
       ((int * int) * bool) list =
     if x1 = x2 then
       let () = s.position <- position_v s x1 (Int.max y1 y2) (Int.min y1 y2) in
       s.position
     else
-      let () = s.position <- position_h s y1 (Int.min x1 x2) (Int.max x1 x2) in
+      let () = s.position <- position_h s y1 (Int.min x1 x2) (Int.max x1 x2) in 
       s.position
 
   let hit_ship (s : t) (coor : int * int) : int =
@@ -92,4 +97,8 @@ module AShip : ShipClasses = struct
   (* Returns a copy of the ship with the sunk element set to true. To be called 
      when the ship is sunk *)
   let set_sunk (ship : t) : t = {ship with sunk = true}
+
+  let get_pos (ship: t) (x: int) (y: int) : bool = 
+    List.assoc (x,y) ship.position 
+
 end

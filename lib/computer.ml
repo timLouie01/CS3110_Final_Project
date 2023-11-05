@@ -1,4 +1,3 @@
-open Zero_Degrees
 open Board
 open ShipsBag
 open Ship
@@ -60,4 +59,7 @@ module AIComp : comp = struct
     | Hit -> rand1_Move c v
     | Miss -> rand1_Move c v
     | _ -> ai_shoot v c x y
+
+  let rec smart1_Move (c : t) (v : BattleGround.t) : bool =
+    failwith "unimplemented"
 end
