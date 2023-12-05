@@ -13,6 +13,13 @@ utop:
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
 
+
+doc:
+	dune build @doc
+opendoc: doc
+	@bash opendoc.sh
+
+
 zip:
 	rm -f Project_0_Degrees.zip
 	zip -r Project_0_Degrees.zip .

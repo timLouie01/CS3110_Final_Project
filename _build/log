@@ -1,9 +1,9 @@
-# dune build
+# dune build @doc
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /Users/timothylouie/Documents/GitHub/Project_0_Degrees
 # Auto-detected concurrency: 10
-$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_50f203_output
+$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_1fc491_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -117,7 +117,3 @@ $ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -bin-annot -I lib/.Zero_Degrees.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Zero_Degrees -o lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmo -c -impl lib/ship.ml)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -a -o lib/Zero_Degrees.cma lib/.Zero_Degrees.objs/byte/zero_Degrees.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Ship.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__ShipsBag.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Board.cmo lib/.Zero_Degrees.objs/byte/zero_Degrees__Computer.cmo)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -shared -linkall -I lib -o lib/Zero_Degrees.cmxs lib/Zero_Degrees.cmxa)
-$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -o test/main.exe lib/Zero_Degrees.cmxa test/.main.eobjs/native/dune__exe__Main.cmx)
