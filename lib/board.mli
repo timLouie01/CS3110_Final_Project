@@ -31,7 +31,7 @@ module type GameBoard = sig
   (* val ship_positons : occupy -> int -> int -> t -> int list *)
 
   (* Given a ship type places the ship with its head at the inputted head
-     coordinate and returns a list of valid positosn for the tail of the given
+     coordinate and returns a list of valid positions for the tail of the given
      ship type to be [place_ship (x) (y)] Requires: That the position x,y is a
      valid position in the graph. Also that ship inputted has not already been
      placed Returns: The number of ships left to add to the grid *)
