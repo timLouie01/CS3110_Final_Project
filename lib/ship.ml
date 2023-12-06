@@ -75,7 +75,7 @@ module AShip : ShipClasses = struct
   (* let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
     unit = *)
   let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
-      ((int * int) * bool) list =
+      ((int * int) * bool) list = 
     if x1 = x2 then
       let () = s.position <- position_v s x1 (Int.max y1 y2) (Int.min y1 y2) in
       s.position
