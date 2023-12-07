@@ -49,7 +49,7 @@ module AShip : ShipClasses = struct
     | "Battleship" ->
         let length = 4 in
         build_helper name length false
-    | "Destoryer" ->
+    | "Destroyer" ->
         let length = 3 in
         build_helper name length false
     | "Submarine" ->

@@ -34,7 +34,14 @@ let print_Grid (grid : BattleGround.occupy array array) =
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Ship s ->
-          let () = print_string " x |" in
+          let () = (match Ship.AShip.get_type_of_ship s with 
+          | "Carrier" -> print_string " C |"
+          | "Battleship" -> print_string " B |"
+          | "Destroyer" -> print_string " D |"
+          | "Submarine" -> print_string " S |"
+          | "Patrol Boat" -> print_string " P |"
+          | _ -> print_string "error")
+        in
           if x = 9 then (
             let () = print_newline () in
             (* let () = print_string (horizontal_Lines (Array.length grid))
@@ -143,7 +150,7 @@ let () =
               "That was an invalid head position and tail 
 \n\n\
               \              direciton combination!";
-            print_endline ("Please enter new coordiantes for your" ^ ship_name);
+            print_endline ("Please enter new coordiantes for your " ^ ship_name);
             place_all_ships ((ship_name, length, get_function) :: t) p1_grid)
     | [] -> p1_grid
   in
