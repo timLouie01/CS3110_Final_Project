@@ -56,11 +56,16 @@ module PlayerList:PlayerListOfShips = struct
       | _ -> {player_ships with patrolBoat = (AShip.set_sunk sunk_ship)}  *)
 
   let list_health (bag: t) : unit = 
-    print_endline("     + Carrier Ship Health " ^ string_of_int(AShip.get_health(bag.carrier)) ^ " of 5");
-    print_endline("     + Battleship Ship Health " ^ string_of_int(AShip.get_health(bag.battleship))^ " of 4");
-    print_endline("     + Destroyer Ship Health " ^ string_of_int(AShip.get_health(bag.destroyer))^ " of 3");
-    print_endline("     + Submarine Ship Health " ^ string_of_int(AShip.get_health(bag.submarine))^ " of 3");
-    print_endline("     + Patrol Boat Ship Health " ^ string_of_int(AShip.get_health(bag.patrolBoat))^ " of 2")
+    print_endline("     + Carrier Ship Health " 
+      ^ string_of_int(AShip.get_health(bag.carrier)) ^ " of 5");
+    print_endline("     + Battleship Ship Health " 
+      ^ string_of_int(AShip.get_health(bag.battleship))^ " of 4");
+    print_endline("     + Destroyer Ship Health " 
+      ^ string_of_int(AShip.get_health(bag.destroyer))^ " of 3");
+    print_endline("     + Submarine Ship Health " 
+      ^ string_of_int(AShip.get_health(bag.submarine))^ " of 3");
+    print_endline("     + Patrol Boat Ship Health " 
+      ^ string_of_int(AShip.get_health(bag.patrolBoat))^ " of 2")
 
   let all_sunk (bag: t) : bool = 
     let list_to_check = [bag.carrier; bag.battleship; bag.destroyer; bag.submarine; bag.patrolBoat] in
