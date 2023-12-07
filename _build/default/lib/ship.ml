@@ -75,7 +75,7 @@ module AShip : ShipClasses = struct
   (* let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
     unit = *)
   let rec set_position (s : t) (x1 : int) (y1 : int) (x2 : int) (y2 : int) :
-      ((int * int) * bool) list =
+      ((int * int) * bool) list = 
     if x1 = x2 then
       let () = s.position <- position_v s x1 (Int.max y1 y2) (Int.min y1 y2) in
       s.position
@@ -90,7 +90,6 @@ module AShip : ShipClasses = struct
      when the ship is sunk *)
   let set_sunk (ship : t) : t = {ship with sunk = true} *)
 
-
   (* let rec print_out (pos:(((int * int))*bool) list) : unit = 
     match pos with
     | ((x,y),b)::t -> print_endline(string_of_int(x) ^ ","^ string_of_int(y) ^ " | "); print_out (t) *)
@@ -103,11 +102,11 @@ module AShip : ShipClasses = struct
     let () = s.position <- List.remove_assoc coor s.position in
     let () = s.position <- ((coor, true) :: s.position) in
     if ((get_health s ) = 0) then s.sunk <- true;
-    get_health s) 
+    get_health s)
   with Not_found -> match coor with
       | (x,y) -> let () = print_endline (string_of_int(x) ^ "," ^ string_of_int(y)) in get_health s
     (* if try (List.assoc coor s.position = true) with Not_found -> match coor with *)
-      (* | (x,y) -> let () = print_endline (string_of_int(x) ^ "," ^ string_of_int(y)) in true then get_health s
+    (* | (x,y) -> let () = print_endline (string_of_int(x) ^ "," ^ string_of_int(y)) in true then get_health s
     else
       let () = s.hits <- s.hits + 1 in
       let () = s.position <- List.remove_assoc coor s.position in

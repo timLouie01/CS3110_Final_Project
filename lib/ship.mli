@@ -18,11 +18,13 @@ module type ShipClasses = sig
   val get_sunk : t -> bool
   (* Returns a copy of the ship with the sunk element set to true. To be called 
      when the ship is sunk *)
+
   (* val set_sunk : t -> t  *)
 
   val get_pos : t -> int -> int -> bool
 
   (* val move_ship : t -> bool *)
+  
 end
 
 module AShip : ShipClasses
