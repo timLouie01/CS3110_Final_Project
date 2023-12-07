@@ -124,64 +124,35 @@ module AIComp : comp = struct
       let coor = List.nth c.hits (Random.int (List.length c.hits)) in
       let direction = Random.int 4 in
 
-      let n = ref 0 in
-      let x = ref 0 in
-      let y = ref 0 in
-      let _ =
-        while !n = 0 do
-          match direction with
-          | 0 -> (
-              match coor with
-              | x', y' ->
-                  if x' - 1 > 10 || x' - 1 < 0 then (x, y)
-                  else
-                    let _ = x := x' - 1 in
-                    let _ = y := y' + 1 in
-                    let _ = n := 1 in
-                    (x, y))
-          | 1 -> (
-              match coor with
-              | x', y' ->
-                  if x' + 1 > 10 || x' + 1 < 0 then (x, y)
-                  else
-                    let _ = x := x' + 1 in
-                    let _ = y := y' in
-                    let _ = n := 1 in
-                    (x, y))
-          | 2 -> (
-              match coor with
-              | x', y' ->
-                  if y' - 1 > 10 || y' - 1 < 0 then (x, y)
-                  else
-                    let _ = x := x' in
-                    let _ = y := y' - 1 in
-                    let _ = n := 1 in
-                    (x, y))
-          | 3 -> (
-              match coor with
-              | x', y' ->
-                  if y' + 1 > 10 || y' + 1 < 0 then (x, y)
-                  else
-                    let _ = x := x' in
-                    let _ = y := y' + 1 in
-                    let _ = n := 1 in
-                    (x, y))
-          | _ -> (x, y)
-        done
+      let new_coor =
+        match direction with
+        | 0 -> (
+            match coor with
+            | x, y -> (x - 1, y))
+        | 1 -> (
+            match coor with
+            | x, y -> (x + 1, y))
+        | 2 -> (
+            match coor with
+            | x, y -> (x, y - 1))
+        | 3 -> (
+            match coor with
+            | x, y -> (x, y + 1))
+        | _ -> coor
       in
+
       let x1 =
-        match (!x, !y) with
+        match new_coor with
         | o, _ -> o
       in
       let y1 =
-        match (!x, !y) with
+        match new_coor with
         | _, p -> p
       in
-      match BattleGround.get_pos opponent x1 y1 with
-      | Hit -> rand1_Move c opponent
-      | Miss -> rand1_Move c opponent
-      | _ -> ai_shoot opponent c x1 y1
-
-  let rec smart1_Move (c : t) (v : BattleGround.t) : bool =
-    failwith "unimplemented"
+      if x1 > 10 || x1 < 0 || y1 > 10 || y1 < 0 then rand_Move c opponent
+      else
+        match BattleGround.get_pos opponent x1 y1 with
+        | Hit -> rand1_Move c opponent
+        | Miss -> rand1_Move c opponent
+        | _ -> ai_shoot opponent c x1 y1
 end
