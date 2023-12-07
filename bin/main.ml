@@ -66,8 +66,18 @@ let print_oneline_grid (grid : BattleGround.occupy array array) (y : int) =
         let () = print_string "   |" in
         if x = 9 then print_string ""
     | BattleGround.Ship s ->
-        let () = print_string " x |" in
-        if x = 9 then print_string ""
+
+      (match Ship.AShip.get_type_of_ship s with 
+      | "Carrier" -> print_string " C |"
+      | "Battleship" -> print_string " B |"
+      | "Destroyer" -> print_string " D |"
+      | "Submarine" -> print_string " S |"
+      | "Patrol Boat" -> print_string " P |"
+      | _ -> print_string "error"
+      )
+        (* let () = print_string " x |" in *)
+        (* if x = 9 then print_string "" *)
+
     | BattleGround.Hit ->
         let () = print_string " H |" in
         if x = 9 then print_string ""
@@ -218,6 +228,8 @@ let () =
   (* While loop to keep playing the game *)
   while continue_game = ref true do
     (*Player 1 is shooting*)
+    print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
+  PlayerList.list_health (AIComp.get_bag computer_P2);
     let next = ref 0 in
     let x1 = ref 0 in
     let y1 = ref 0 in
@@ -235,7 +247,7 @@ let () =
       else next := 1
     done;
 
-    Sys.command "clear";
+    (* Sys.command "clear"; *)
     let shoot_result =
       BattleGround.shoot (AIComp.get_board computer_P2) !x1 !y1
     in
@@ -256,33 +268,36 @@ let () =
     in
 
     print_endline "Computer is shooting... Press enter to continue...";
-    String.trim (read_line ());
-    Sys.command "clear";
-
+    (* String.trim (read_line ()); *)
+    (* Sys.command "clear"; *)
+    print_endline ("test!!");
     (*AI Computer is shooting*)
     AIComp.set_board computer_P2 shoot_result.board_type;
 
+    (* if AShip.get_health(PlayerList.get_patrolBoat (AIComp.get_bag computer_P2)) = 0 then *)
     if PlayerList.all_sunk (AIComp.get_bag computer_P2) = true then
-      let _ = Sys.command "clear" in
-
+      (* let _ = Sys.command "clear" in *)
+    let () = print_endline ("here") in
       let _ =
         print_Grid (BattleGround.get_board (AIComp.get_board computer_P2))
       in
       let _ = print_newline () in
-      let _ = Sys.command "clear" in
-      let () = print_endline "==> YOU WON!" in
+      (* let _ = Sys.command "clear" in *)
+      let () = print_endline "==> YOU WON!"  in
       continue_game := false
     else continue_game := true;
 
+
     if continue_game = ref true then
-      let ai_shot = AIComp.rand1_Move computer_P2 p1_battle_grid in
+      (* rand1_move *)
+      let ai_shot = AIComp.rand_Move computer_P2 p1_battle_grid in
       if ai_shot.shot then
         match ai_shot.ship_shot with
         | Some a ->
             print_endline ("and HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
             print_view ();
             if PlayerList.all_sunk p1_ship_bag = true then
-              let _ = Sys.command "clear" in
+              (* let _ = Sys.command "clear" in *)
               let () = print_endline "==> YOU LOST!" in
               continue_game := false
             else continue_game := true
@@ -291,6 +306,6 @@ let () =
         print_endline "and MISSED! ]";
         print_view ())
     else
-      let _ = Sys.command "clear" in
+      (* let _ = Sys.command "clear" in *)
       print_endline "==> YOU WON!!"
   done
