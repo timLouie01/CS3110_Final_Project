@@ -16,7 +16,7 @@ module type comp = sig
   val get_bag: t -> PlayerList.t
 
 
-  val rand_Move : t -> BattleGround.t -> BattleGround.t''
+  (* val rand_Move : t -> BattleGround.t -> BattleGround.t''
   (** [rand_Move playerBoard] Returns: a new board with randomized shoot
       locations. If the shot hits, the ship and board is updated. Otherwise only
       the board is updated.*)
@@ -24,7 +24,7 @@ module type comp = sig
   val rand1_Move : t -> BattleGround.t -> BattleGround.t''
   (** [rand_Move playerBoard] Returns: a new board with a shot fired based on
       current hit and miss locations. If the shot hits, the ship and board is
-      updated. Otherwise only the board is updated.*)
+      updated. Otherwise only the board is updated.*) *)
 end
 
 module AIComp : comp 
