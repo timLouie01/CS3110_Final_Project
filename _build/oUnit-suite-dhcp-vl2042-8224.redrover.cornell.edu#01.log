@@ -1,0 +1,9 @@
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Start test suite:0:get_health carrier.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Test suite:0:get_health carrier is successful.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: End test suite:0:get_health carrier.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Start test suite:2:get_type_of_ship carrier.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Test suite:2:get_type_of_ship carrier is successful.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: End test suite:2:get_type_of_ship carrier.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Start test suite:4:get_sunk carrier.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: Test suite:4:get_sunk carrier is successful.
+2023-12-07T07:22:30+00:00 dhcp-vl2042-8224.redrover.cornell.edu#01 I: End test suite:4:get_sunk carrier.
