@@ -21,7 +21,6 @@ let print_Grid (grid : BattleGround.occupy array array) =
   print_endline "  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |";
   print_endline "- -----------------------------------------";
   for y = 0 to 9 do
-    (* if y = 0 then print_string(horizontal_Lines (Array.length(grid))); *)
     for x = 0 to 9 do
       if x = 0 then print_string (string_of_int y ^ " |") else print_string "";
       match Array.get (Array.get grid x) y with
@@ -29,37 +28,27 @@ let print_Grid (grid : BattleGround.occupy array array) =
           let () = print_string "   |" in
           if x = 9 then (
             let () = print_newline () in
-            (* let () = print_string (horizontal_Lines (Array.length grid))
-               in *)
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Ship s ->
           let () = print_string " x |" in
           if x = 9 then (
             let () = print_newline () in
-            (* let () = print_string (horizontal_Lines (Array.length grid))
-               in *)
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Hit ->
           let () = print_string " H |" in
           if x = 9 then (
             let () = print_newline () in
-            (* let () = print_string (horizontal_Lines (Array.length grid))
-               in *)
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Miss ->
           let () = print_string " M |" in
           if x = 9 then (
             let () = print_newline () in
-            (* let () = print_string (horizontal_Lines (Array.length grid))
-               in *)
             print_string "- -----------------------------------------";
             print_endline "")
     done
-    (* print_newline() *)
-    (* print_endline(horizontal_Lines (Array.length(grid))) *)
   done
 
 let () =
@@ -104,6 +93,9 @@ let () =
     | _ -> [ 0; 0 ]
   in
 
+  let check_int (s : string) : int = try int_of_string s with _ -> 11 in
+  let check_input () : string = try read_line () with _ -> "11 11 11" in
+
   let rec place_all_ships
       (ships_list : (string * int * (PlayerList.t -> AShip.t)) list)
       (p1_grid : BattleGround.t) : BattleGround.t =
@@ -117,9 +109,11 @@ let () =
         print_endline
           ("==> Captain " ^ player_1_name
          ^ ", Please provide the head position in the (format: x y <N/S/E/W>)");
-        let head_Pos_List = String.split_on_char ' ' (read_line ()) in
-        let x1 = int_of_string (List.nth head_Pos_List 0) in
-        let y1 = int_of_string (List.nth head_Pos_List 1) in
+        let head_Pos_List =
+          String.split_on_char ' ' (check_input ()) @ [ "11"; "11"; "11" ]
+        in
+        let x1 = check_int (List.nth head_Pos_List 0) in
+        let y1 = check_int (List.nth head_Pos_List 1) in
         let position =
           String.uppercase_ascii (String.trim (List.nth head_Pos_List 2))
         in
@@ -179,15 +173,26 @@ let () =
   (* While loop to keep playing the game *)
   while continue_game = ref true do
     (*Player 1 is shooting*)
-    print_endline
-      "==> Enter the coordinates you would like to shoot at (format x y): ";
-    let shoot_pos_list = String.split_on_char ' ' (read_line ()) in
-    let x1 = int_of_string (List.nth shoot_pos_list 0) in
-    let y1 = int_of_string (List.nth shoot_pos_list 1) in
+    let next = ref 0 in
+    let x1 = ref 0 in
+    let y1 = ref 0 in
+    while !next = 0 do
+      print_endline
+        "==> Enter the coordinates you would like to shoot at (format x y): ";
+      let shoot_pos_list =
+        String.split_on_char ' ' (check_input ()) @ [ "11"; "11"; "11" ]
+      in
+      x1 := check_int (List.nth shoot_pos_list 0);
+      y1 := check_int (List.nth shoot_pos_list 1);
+
+      if !x1 > 10 || !y1 > 10 then
+        print_endline "==> INVALID COORDINATES, try again"
+      else next := 1
+    done;
 
     Sys.command "clear";
     let shoot_result =
-      BattleGround.shoot (AIComp.get_board computer_P2) x1 y1
+      BattleGround.shoot (AIComp.get_board computer_P2) !x1 !y1
     in
 
     (*Results of Player 1 shots*)
@@ -195,12 +200,12 @@ let () =
       match shoot_result.shot with
       | true ->
           let () = print_endline "[ You HIT something! ]" in
-          (BattleGround.get_board p1_tracking_grid).(x1).(y1) <-
+          (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
             BattleGround.Hit;
           print_grids_health ()
       | false ->
           let () = print_endline "[ You MISSED! :( ]" in
-          (BattleGround.get_board p1_tracking_grid).(x1).(y1) <-
+          (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
             BattleGround.Miss;
           print_grids_health ()
     in
