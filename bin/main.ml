@@ -51,6 +51,42 @@ let print_Grid (grid : BattleGround.occupy array array) =
     done
   done
 
+let print_oneline_grid (grid : BattleGround.occupy array array) (y : int) =
+  for x = 0 to 9 do
+    if x = 0 then print_string (string_of_int y ^ " |") else print_string "";
+    match Array.get (Array.get grid x) y with
+    | BattleGround.Ocean ->
+        let () = print_string "   |" in
+        if x = 9 then print_string ""
+    | BattleGround.Ship s ->
+        let () = print_string " x |" in
+        if x = 9 then print_string ""
+    | BattleGround.Hit ->
+        let () = print_string " H |" in
+        if x = 9 then print_string ""
+    | BattleGround.Miss ->
+        let () = print_string " M |" in
+        if x = 9 then print_string ""
+  done
+
+let print_two_Grid (grid1 : BattleGround.occupy array array)
+    (grid2 : BattleGround.occupy array array) =
+  print_endline
+    "  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |       | 0 | 1 | 2 | 3 | 4 | 5 \
+     | 6 | 7 | 8 | 9 |";
+  print_endline
+    "- -----------------------------------------     - \
+     -----------------------------------------";
+  for y = 0 to 9 do
+    print_oneline_grid grid1 y;
+    print_string "     ";
+    print_oneline_grid grid2 y;
+    print_newline ();
+    print_endline
+      "- -----------------------------------------     - \
+       -----------------------------------------"
+  done
+
 let () =
   Sys.command "clear";
   print_endline "-------------------------------------------";
@@ -148,21 +184,23 @@ let () =
 
   Sys.command "clear";
 
-  let print_grids_health () =
+  let print_view () =
     print_endline "==> Your ship healths: ";
     PlayerList.list_health p1_ship_bag;
     print_newline ();
-    print_endline "          <<< Your Board >>>";
-    print_Grid (BattleGround.get_board p1_battle_grid);
-    print_newline ();
-    print_endline "          <<< Enemy's Board >>>";
-    print_Grid (BattleGround.get_board p1_tracking_grid)
+    print_endline
+      "          <<< Your Board >>>                                <<< Enemy's \
+       Board >>>";
+    print_two_Grid
+      (BattleGround.get_board p1_battle_grid)
+      (BattleGround.get_board p1_tracking_grid);
+    print_newline ()
   in
 
   let _ = Sys.command "clear" in
 
   print_endline "------------- Let the game begin! -------------";
-  print_grids_health ();
+  print_view ();
 
   (* Creating the AI Computer board*)
   let computer_P2 = AIComp.create_ai in
@@ -202,12 +240,12 @@ let () =
           let () = print_endline "[ You HIT something! ]" in
           (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
             BattleGround.Hit;
-          print_grids_health ()
+          print_view ()
       | false ->
           let () = print_endline "[ You MISSED! :( ]" in
           (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
             BattleGround.Miss;
-          print_grids_health ()
+          print_view ()
     in
 
     print_endline "Computer is shooting... Press enter to continue...";
@@ -234,7 +272,7 @@ let () =
         match ai_shot.ship_shot with
         | Some a ->
             print_endline ("and HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
-            print_grids_health ();
+            print_view ();
             if PlayerList.all_sunk p1_ship_bag = true then
               let () = print_endline "==> YOU LOST!" in
               continue_game := false
@@ -242,6 +280,6 @@ let () =
         | None -> print_endline "==> Unreachable Code"
       else (
         print_endline "and MISSED! ]";
-        print_grids_health ())
+        print_view ())
     else print_endline "==> YOU WON!!"
   done
