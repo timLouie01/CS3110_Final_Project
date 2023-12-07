@@ -10,8 +10,8 @@ module type comp = sig
   val get_board : t -> BattleGround.t
   val set_board : t -> BattleGround.t -> unit
   val get_bag : t -> PlayerList.t
-  val rand_Move : t -> BattleGround.t -> BattleGround.t''
-  val rand1_Move : t -> BattleGround.t -> BattleGround.t''
+  (* val rand_Move : t -> BattleGround.t -> BattleGround.t'' *)
+  (* val rand1_Move : t -> BattleGround.t -> BattleGround.t'' *)
 end
 
 module AIComp : comp = struct
