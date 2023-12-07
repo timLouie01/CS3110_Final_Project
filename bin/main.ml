@@ -26,7 +26,7 @@ let print_Grid (grid : BattleGround.occupy array array) =
       if x = 0 then print_string (string_of_int y ^ " |") else print_string "";
       match Array.get (Array.get grid x) y with
       | BattleGround.Ocean ->
-          let () = print_string " o |" in
+          let () = print_string "   |" in
           if x = 9 then (
             let () = print_newline () in
             (* let () = print_string (horizontal_Lines (Array.length grid))
@@ -63,26 +63,27 @@ let print_Grid (grid : BattleGround.occupy array array) =
   done
 
 let () =
-  print_endline "Welcome to the Artic Battleship Game!";
-  print_endline "Player 1 please input your name: ";
+  Sys.command "clear";
+  print_endline "-------------------------------------------";
+  print_endline "==> Welcome to the Artic Battleship Game!";
+  print_string "==> Player 1 please input your name: ";
   let player_1_name = String.trim (read_line ()) in
 
+  Sys.command "clear";
   print_endline
-    ("Hi Captain " ^ player_1_name
+    ("==> Hi Captain " ^ player_1_name
    ^ "! We will play on a battle grid of size of 10 x 10.");
 
   print_newline ();
   print_endline
-    ("Captain " ^ player_1_name
-   ^ ", you will place 5 ships: 1 Carrier ship 1 BattleShip 1 Destoryer 1 "
-   ^ "Submarine 1 Patrol Boat");
+    ("==> Captain " ^ player_1_name
+   ^ ", you will place 5 ships: 1 Carrier ship, 1 BattleShip, 1 Destroyer, 1 "
+   ^ "Submarine, 1 Patrol Boat");
   print_newline ();
 
   let p1_ship_bag = PlayerList.build_bag 5 in
   let p1_battle_grid = BattleGround.set_up_board BattleGround.Ocean in
   let p1_tracking_grid = BattleGround.set_up_board BattleGround.Ocean in
-  (* let p2_ship_bag = PlayerList.build_bag in let p2_battle_grid =
-     BattleGround.set_up_board in *)
   let ships_to_place =
     [
       ("Carrier", 5, PlayerList.get_Carrier);
@@ -108,23 +109,20 @@ let () =
       (p1_grid : BattleGround.t) : BattleGround.t =
     match ships_list with
     | (ship_name, length, get_function) :: t -> (
-        print_endline
-          ("Captain " ^ player_1_name
-         ^ " please provide the head positon for your " ^ ship_name
-         ^ " (Which has a length of " ^ string_of_int length ^ ")");
         print_newline ();
-        print_endline "Please provide the head position in the format x y";
+        print_endline
+          ("--- Placing your " ^ ship_name ^ " of length "
+         ^ string_of_int length ^ " ---");
+        print_newline ();
+        print_endline
+          ("==> Captain " ^ player_1_name
+         ^ ", Please provide the head position in the (format: x y <N/S/E/W>)");
         let head_Pos_List = String.split_on_char ' ' (read_line ()) in
         let x1 = int_of_string (List.nth head_Pos_List 0) in
         let y1 = int_of_string (List.nth head_Pos_List 1) in
-        print_newline ();
-        print_endline
-          ("Captain, " ^ player_1_name ^ " how should we position the "
-         ^ ship_name);
-        print_endline
-          "Enter N to point the tail north, S for south, E for east, and W for \
-           west.";
-        let position = String.uppercase_ascii (String.trim (read_line ())) in
+        let position =
+          String.uppercase_ascii (String.trim (List.nth head_Pos_List 2))
+        in
         print_newline ();
         let tail_pos = calculate_tail x1 y1 length position in
         let ship_to_place = p1_ship_bag |> get_function in
@@ -133,80 +131,95 @@ let () =
             (List.nth tail_pos 0) (List.nth tail_pos 1)
         in
         let p1_grid = output_record.board_type in
+
         let added_check = output_record.added in
         match added_check with
         | true ->
+            Sys.command "clear";
             print_Grid (BattleGround.get_board p1_grid);
+
             place_all_ships t p1_grid
         | false ->
-            print_endline
-              "That was an invalid head position and tail 
-\n\n\
-              \              direciton combination!";
-            print_endline ("Please enter new coordiantes for your" ^ ship_name);
+            print_endline "<<!INVALID PLACEMENT! Please try again.>>";
+            print_newline ();
             place_all_ships ((ship_name, length, get_function) :: t) p1_grid)
     | [] -> p1_grid
   in
 
   print_Grid (BattleGround.get_board p1_battle_grid);
   let p1_battle_grid = place_all_ships ships_to_place p1_battle_grid in
-  print_endline "Your Battle Grid is set!!";
+  print_endline "==> Your Battle Grid is set!!";
+  print_endline "Press enter to begin the game...";
+  let _ = String.trim (read_line ()) in
 
-  print_endline "The health of your ships: ";
-  PlayerList.list_health p1_ship_bag;
-  print_endline "Tracking Grid:";
-  print_Grid (BattleGround.get_board p1_tracking_grid);
+  Sys.command "clear";
 
-  (* Comment this out later (for now use to see if you are supposed to hit
-     ship) *)
-  print_endline "Enemy Lines";
+  let print_grids_health () =
+    print_endline "==> Your ship healths: ";
+    PlayerList.list_health p1_ship_bag;
+    print_newline ();
+    print_endline "          <<< Your Board >>>";
+    print_Grid (BattleGround.get_board p1_battle_grid);
+    print_newline ();
+    print_endline "          <<< Enemy's Board >>>";
+    print_Grid (BattleGround.get_board p1_tracking_grid)
+  in
+
+  let _ = Sys.command "clear" in
+
+  print_endline "------------- Let the game begin! -------------";
+  print_grids_health ();
+
+  (* Creating the AI Computer board*)
   let computer_P2 = AIComp.create_ai in
   let () = AIComp.set_board_ai computer_P2 in
-  print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-  PlayerList.list_health (AIComp.get_bag computer_P2);
 
-  print_endline "We will begin the Game Now!";
   let continue_game = ref true in
+
   (* While loop to keep playing the game *)
   while continue_game = ref true do
-(* Get rid of this for produciton code leaving for testing *)
-    print_endline "Opponent's grid";
-    print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-
-    print_endline "Enter coordinates you would like to shoot at: ";
-    print_endline "Please provide the position in the format x y";
+    (*Player 1 is shooting*)
+    print_endline
+      "==> Enter the coordinates you would like to shoot at (format x y): ";
     let shoot_pos_list = String.split_on_char ' ' (read_line ()) in
     let x1 = int_of_string (List.nth shoot_pos_list 0) in
     let y1 = int_of_string (List.nth shoot_pos_list 1) in
 
+    Sys.command "clear";
     let shoot_result =
       BattleGround.shoot (AIComp.get_board computer_P2) x1 y1
     in
 
-    (* if shoot_result.shot then
-      let () = print_endline "There is hit!" in
-      (BattleGround.get_board p1_tracking_grid).(x1).(y1) <- BattleGround.Hit
-    else let () = print_endline "You missed" in (
-      BattleGround.get_board p1_tracking_grid).(x1).(y1) <- BattleGround.Miss; *)
-    let () = match shoot_result.shot with
-    | true ->  let () = print_endline "There is hit!" in
-    (BattleGround.get_board p1_tracking_grid).(x1).(y1) <- BattleGround.Hit
-    | false -> let () = print_endline "You missed" in (
-      BattleGround.get_board p1_tracking_grid).(x1).(y1) <- BattleGround.Miss; in
+    (*Results of Player 1 shots*)
+    let () =
+      match shoot_result.shot with
+      | true ->
+          let () = print_endline "[ You HIT something! ]" in
+          (BattleGround.get_board p1_tracking_grid).(x1).(y1) <-
+            BattleGround.Hit;
+          print_grids_health ()
+      | false ->
+          let () = print_endline "[ You MISSED! :( ]" in
+          (BattleGround.get_board p1_tracking_grid).(x1).(y1) <-
+            BattleGround.Miss;
+          print_grids_health ()
+    in
 
-    print_endline "Tracking Grid:";
-    print_Grid (BattleGround.get_board p1_tracking_grid);
+    print_endline "Computer is shooting... Press enter to continue...";
+    String.trim (read_line ());
+    Sys.command "clear";
 
+    (*AI Computer is shooting*)
     AIComp.set_board computer_P2 shoot_result.board_type;
 
-    print_endline "Opponent's grid";
-    print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-
-    print_endline "Health of opponent Ships: ";
-    PlayerList.list_health (AIComp.get_bag computer_P2);
-
     if PlayerList.all_sunk (AIComp.get_bag computer_P2) = true then
-      let () = print_endline "You won!" in
+      let _ = Sys.command "clear" in
+
+      let _ =
+        print_Grid (BattleGround.get_board (AIComp.get_board computer_P2))
+      in
+      let _ = print_newline () in
+      let () = print_endline "==> YOU WON!" in
       continue_game := false
     else continue_game := true;
 
@@ -215,18 +228,15 @@ let () =
       if ai_shot.shot then
         match ai_shot.ship_shot with
         | Some a ->
-            print_endline ("The Computer hit your " ^ AShip.get_type_of_ship a);
-            print_endline ("Your Gird: ");
-            print_Grid (BattleGround.get_board p1_battle_grid);
-            print_endline "The health of your xships: ";
-            PlayerList.list_health p1_ship_bag;
-            if PlayerList.all_sunk (p1_ship_bag) = true then 
-              let () = print_endline "You Lost!" in continue_game := false
-          else continue_game := true;
-        | None ->
-            print_endline
-              "This won't happend since
-              this code is only reached when ai_shot.shot true"
-      else print_endline "The Computer missed you!"
-    else print_endline "You won!!"
+            print_endline ("and HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
+            print_grids_health ();
+            if PlayerList.all_sunk p1_ship_bag = true then
+              let () = print_endline "==> YOU LOST!" in
+              continue_game := false
+            else continue_game := true
+        | None -> print_endline "==> Unreachable Code"
+      else (
+        print_endline "and MISSED! ]";
+        print_grids_health ())
+    else print_endline "==> YOU WON!!"
   done

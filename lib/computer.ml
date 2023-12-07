@@ -112,8 +112,7 @@ module AIComp : comp = struct
   let rand_Move (c : t)(opponent:BattleGround.t): BattleGround.t'' =
     let x = Random.int 10 in
     let y = Random.int 10 in
-    print_endline (string_of_int(x));
-    print_endline (string_of_int(y));
+    print_string ("[ The computer shot at " ^ string_of_int(x) ^ " " ^ string_of_int(y) ^ " ");
     ai_shoot opponent c x y
 
   let rec rand1_Move (c : t) (opponent:BattleGround.t): BattleGround.t'' =
