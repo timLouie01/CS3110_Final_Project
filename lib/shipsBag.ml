@@ -30,7 +30,7 @@ module PlayerList:PlayerListOfShips = struct
   let build_bag (num_ships:int): t =
     let carrier = AShip.build_ship("Carrier") in 
     let battleship = AShip.build_ship("Battleship") in
-    let destroyer= AShip.build_ship("Destoryer") in 
+    let destroyer= AShip.build_ship("Destroyer") in 
     let submarine = AShip.build_ship("Submarine") in 
     let patrolBoat = AShip.build_ship("Patrol Boat") in 
       {carrier = carrier; battleship = battleship; destroyer = destroyer; submarine = submarine; patrolBoat = patrolBoat}

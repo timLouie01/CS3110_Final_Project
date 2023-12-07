@@ -31,7 +31,14 @@ let print_Grid (grid : BattleGround.occupy array array) =
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Ship s ->
-          let () = print_string " x |" in
+          let () = (match Ship.AShip.get_type_of_ship s with 
+          | "Carrier" -> print_string " C |"
+          | "Battleship" -> print_string " B |"
+          | "Destroyer" -> print_string " D |"
+          | "Submarine" -> print_string " S |"
+          | "Patrol Boat" -> print_string " P |"
+          | _ -> print_string "error")
+        in
           if x = 9 then (
             let () = print_newline () in
             print_string "- -----------------------------------------";
