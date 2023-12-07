@@ -262,18 +262,20 @@ let () =
         print_Grid (BattleGround.get_board (AIComp.get_board computer_P2))
       in
       let _ = print_newline () in
+      let _ = Sys.command "clear" in
       let () = print_endline "==> YOU WON!" in
       continue_game := false
     else continue_game := true;
 
     if continue_game = ref true then
-      let ai_shot = AIComp.rand_Move computer_P2 p1_battle_grid in
+      let ai_shot = AIComp.rand1_Move computer_P2 p1_battle_grid in
       if ai_shot.shot then
         match ai_shot.ship_shot with
         | Some a ->
             print_endline ("and HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
             print_view ();
             if PlayerList.all_sunk p1_ship_bag = true then
+              let _ = Sys.command "clear" in
               let () = print_endline "==> YOU LOST!" in
               continue_game := false
             else continue_game := true
@@ -281,5 +283,7 @@ let () =
       else (
         print_endline "and MISSED! ]";
         print_view ())
-    else print_endline "==> YOU WON!!"
+    else
+      let _ = Sys.command "clear" in
+      print_endline "==> YOU WON!!"
   done
