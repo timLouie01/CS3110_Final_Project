@@ -1,0 +1,75 @@
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:1:get_length carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:1:get_length carrier is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:1:get_length carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:3:get_hits carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:3:get_hits carrier is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:3:get_hits carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:5:get_health battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:5:get_health battleship is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:5:get_health battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:7:get_type_of_ship battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:7:get_type_of_ship battleship is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:7:get_type_of_ship battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:9:get_sunk battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:9:get_sunk battleship is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:9:get_sunk battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:11:get_length destroyer.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:11:get_length destroyer is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:11:get_length destroyer.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:13:get_hits destroyer.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:13:get_hits destroyer is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:13:get_hits destroyer.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:15:get_health submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:15:get_health submarine is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:15:get_health submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:17:get_type_of_ship submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:17:get_type_of_ship submarine is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:17:get_type_of_ship submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:19:get_sunk submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:19:get_sunk submarine is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:19:get_sunk submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:21:get_length patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:21:get_length patrol boat is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:21:get_length patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:23:get_hits patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:23:get_hits patrol boat is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:23:get_hits patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:25:hit_ship patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:25:hit_ship patrol boat is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:25:hit_ship patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:27:get_hits on sunk patrol boat is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:29:get_pos patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:29:get_pos patrol boat is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:29:get_pos patrol boat.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:31:bag get_battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:31:bag get_battleship is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:31:bag get_battleship.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:33:bag get_submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:33:bag get_submarine is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:33:bag get_submarine.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:35:bag list_health.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:35:bag list_health is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:35:bag list_health.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:37:bag all_sunk.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:37:bag all_sunk is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:37:bag all_sunk.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:38:board ocean.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:38:board ocean is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:38:board ocean.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:40:board placed pb tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:40:board placed pb tail is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:40:board placed pb tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:42:board placed carrier tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:42:board placed carrier tail is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:42:board placed carrier tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:45:board check_valid existing carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:45:board check_valid existing carrier is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:45:board check_valid existing carrier.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:47:board hit tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:47:board hit tail is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:47:board hit tail.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Start test suite:49:computer board setup.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: Test suite:49:computer board setup is successful.
+2023-12-08T18:40:24+00:00 dhcp-vl2042-8224.redrover.cornell.edu#02 I: End test suite:49:computer board setup.
