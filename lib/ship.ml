@@ -96,14 +96,14 @@ module AShip : ShipClasses = struct
 
   let hit_ship (s : t) (coor : int * int) : int =
 
-    try (let ship_at = List.assoc coor s.position in if ship_at then get_health s else   
-    
-    let () = s.hits <- s.hits + 1 in
-    let () = s.position <- List.remove_assoc coor s.position in
-    let () = s.position <- ((coor, true) :: s.position) in
-    if ((get_health s ) = 0) then s.sunk <- true;
-    get_health s)
-  with Not_found -> match coor with
+    try (let ship_at = List.assoc coor s.position in 
+      if ship_at then get_health s else   
+        let () = s.hits <- s.hits + 1 in
+        let () = s.position <- List.remove_assoc coor s.position in
+        let () = s.position <- ((coor, true) :: s.position) in
+        if ((get_health s ) = 0) then s.sunk <- true;
+          get_health s)
+      with Not_found -> match coor with
       | (x,y) -> let () = print_endline (string_of_int(x) ^ "," ^ string_of_int(y)) in get_health s
     (* if try (List.assoc coor s.position = true) with Not_found -> match coor with *)
     (* | (x,y) -> let () = print_endline (string_of_int(x) ^ "," ^ string_of_int(y)) in true then get_health s
