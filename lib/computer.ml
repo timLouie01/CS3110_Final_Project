@@ -10,8 +10,9 @@ module type comp = sig
   val get_board : t -> BattleGround.t
   val set_board : t -> BattleGround.t -> unit
   val get_bag : t -> PlayerList.t
-  (* val rand_Move : t -> BattleGround.t -> BattleGround.t'' *)
-  (* val rand1_Move : t -> BattleGround.t -> BattleGround.t'' *)
+  val rand_Move : t -> BattleGround.t -> int * int -> BattleGround.t''
+  val rand1_Move : t -> BattleGround.t -> int * int -> BattleGround.t''
+  val shoot_shield : t -> BattleGround.t -> int * int -> BattleGround.t''
 end
 
 module AIComp : comp = struct
@@ -101,25 +102,48 @@ module AIComp : comp = struct
   let set_board (input_record : t) (board : BattleGround.t) : unit =
     input_record.board <- board
 
-  let ai_shoot (v : BattleGround.t) (c : t) (x : int) (y : int) :
+  let ai_shoot (v : BattleGround.t) (c : t) (x : int) (y : int)
+      (shield_pos : int * int) : BattleGround.t'' =
+    match shield_pos with
+    | xs, ys ->
+        if not (xs = -1) then 
+          let result = BattleGround.shoot_shield_poss v x y xs ys in 
+        result
+      else
+          let result = BattleGround.shoot v x y  in 
+            if result.shot then let () = c.hits <- (x, y) :: c.hits in result
+            else let () = c.misses <- (x, y) :: c.misses in result
+        
+    
+
+  let rand_Move (c : t) (opponent : BattleGround.t) (shield_pos : int * int) :
       BattleGround.t'' =
-    let result = BattleGround.shoot v x y in
-    let _ =
-      if result.shot then c.hits <- (x, y) :: c.hits
-      else c.misses <- (x, y) :: c.misses
-    in
-    result
+    match shield_pos with
+    | x1, y1 ->
+        let x = Random.int 10 in
+        let y = Random.int 10 in
+        print_string
+          ("[ The computer shot at " ^ string_of_int x ^ " " ^ string_of_int y
+         ^ " ");
+        ai_shoot opponent c x y shield_pos
 
-  let rand_Move (c : t) (opponent : BattleGround.t) : BattleGround.t'' =
-    let x = Random.int 10 in
-    let y = Random.int 10 in
-    print_string
-      ("[ The computer shot at " ^ string_of_int x ^ " " ^ string_of_int y ^ " ");
-    ai_shoot opponent c x y
+  let shoot_shield (c : t) (opponent : BattleGround.t) (shield_pos : int * int)
+      : BattleGround.t'' =
+    match shield_pos with
+    | x1, y1 ->
+        let x = x1 in
+        let y = y1 in
+        print_string
+          ("[ The computer shot at " ^ string_of_int x ^ " " ^ string_of_int y
+         ^ " ");
+        ai_shoot opponent c x y shield_pos
 
-  let rec rand1_Move (c : t) (opponent : BattleGround.t) : BattleGround.t'' =
-    if List.length c.hits = 0 then rand_Move (c : t) (opponent : BattleGround.t)
-    else if Random.int 2 = 1 then rand_Move (c : t) (opponent : BattleGround.t)
+  let rec rand1_Move (c : t) (opponent : BattleGround.t)
+      (shield_pos : int * int) : BattleGround.t'' =
+    if List.length c.hits = 0 then
+      rand_Move (c : t) (opponent : BattleGround.t) shield_pos
+    else if Random.int 2 = 1 then
+      rand_Move (c : t) (opponent : BattleGround.t) shield_pos
     else
       let coor = List.nth c.hits (Random.int (List.length c.hits)) in
       let direction = Random.int 4 in
@@ -149,10 +173,11 @@ module AIComp : comp = struct
         match new_coor with
         | _, p -> p
       in
-      if x1 > 10 || x1 < 0 || y1 > 10 || y1 < 0 then rand_Move c opponent
+      if x1 > 9 || x1 < 0 || y1 > 9 || y1 < 0 then
+        rand_Move c opponent shield_pos
       else
         match BattleGround.get_pos opponent x1 y1 with
-        | Hit -> rand1_Move c opponent
-        | Miss -> rand1_Move c opponent
-        | _ -> ai_shoot opponent c x1 y1
+        | Hit -> rand1_Move c opponent shield_pos
+        | Miss -> rand1_Move c opponent shield_pos
+        | _ -> ai_shoot opponent c x1 y1 shield_pos
 end

@@ -3,6 +3,9 @@
 game:
 	OCAMLRUNPARAM=b dune exec bin/main.exe
 
+build:
+	dune build
+
 doc:
 	dune build @doc
 
@@ -27,10 +30,6 @@ clean: bisect-clean
 	dune clean
 	rm -f search.zip
 
-# doc:
-# 	dune build @doc
-# opendoc: doc
-# 	@bash opendoc.sh
 
 zip:
 	rm -f Project_0_Degrees.zip

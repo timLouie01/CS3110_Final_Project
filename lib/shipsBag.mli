@@ -24,6 +24,8 @@ module type PlayerListOfShips = sig
   (* Returns true iff all ships are sunk *)
   val all_sunk: t -> bool
 
+  
+
 end
 
 module PlayerList:PlayerListOfShips

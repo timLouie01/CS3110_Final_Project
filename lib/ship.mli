@@ -22,6 +22,7 @@ module type ShipClasses = sig
   (* val set_sunk : t -> t  *)
 
   val get_pos : t -> int -> int -> bool
+  val get_pos_list: t -> ((int * int) * bool) list 
 
   (* val move_ship : t -> bool *)
   

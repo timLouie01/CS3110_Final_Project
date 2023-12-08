@@ -10,7 +10,7 @@ module type GameBoard = sig
     added : bool;
   }
 
-  type t'' = {board_type: t; shot: bool; ship_shot: AShip.t option}
+  type t'' = {board_type: t; mutable shot: bool; ship_shot: AShip.t option}
 
   (* Variant Data type at a position *)
   type occupy =
@@ -46,7 +46,9 @@ module type GameBoard = sig
   val check_valid : t -> AShip.t -> int -> int -> int -> int -> bool
   val place_ship : t -> AShip.t -> int -> int -> int -> int -> t'
 
+  
   val shoot : t -> int -> int -> t''
+  val shoot_shield_poss : t -> int -> int -> int -> int -> t''
   (** Given x and y coordinates this function searches to see if there is a ship
       at that position in the graph and if so shoots/hits that part of the ship
       [shoot x y] Requires: That the position x,y is a valid position in the

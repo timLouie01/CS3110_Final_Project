@@ -15,6 +15,8 @@ module type ShipClasses = sig
 
   val get_pos : t -> int -> int -> bool
 
+  val get_pos_list: t -> ((int * int) * bool) list 
+
 end 
 
 module AShip : ShipClasses = struct
@@ -116,5 +118,7 @@ module AShip : ShipClasses = struct
 
   let get_pos (ship: t) (x: int) (y: int) : bool = 
     List.assoc (x,y) ship.position 
+  let get_pos_list (ship: t) :((int * int) * bool) list = 
+    ship.position
 
 end

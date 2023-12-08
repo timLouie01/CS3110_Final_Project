@@ -18,8 +18,9 @@ module type GameBoard = sig
 
   val check_valid : t -> AShip.t -> int -> int -> int -> int -> bool
   val place_ship : t -> AShip.t -> int -> int -> int -> int -> t'
-  type t'' = {board_type: t; shot: bool; ship_shot: AShip.t option}
+  type t'' = {board_type: t; mutable shot: bool; ship_shot: AShip.t option}
   val shoot : t -> int -> int -> t''
+  val shoot_shield_poss : t -> int -> int -> int -> int -> t''
   val get_board : t -> occupy array array
   val get_pos : t -> int -> int -> occupy
 end
@@ -38,7 +39,7 @@ module BattleGround : GameBoard = struct
 
   type t' = {board_type: t; added: bool}
 
-  type t'' = {board_type: t; shot: bool; ship_shot: AShip.t option}
+  type t'' = {board_type: t; mutable shot: bool; ship_shot: AShip.t option}
   let set_up_board (fill_type:occupy): t = { board = Array.make_matrix 10 10 fill_type; size = 10 }
 
   let rec check_oceanV (b : t) (s : AShip.t) (x : int) (y1 : int) (y2 : int) :
@@ -107,6 +108,12 @@ module BattleGround : GameBoard = struct
         {board_type = b;shot =  true; ship_shot = Some a}
     | Hit -> let () = b.board.(x).(y) <- Miss in {board_type = b; shot = false;ship_shot = None}
     | Miss -> let () = b.board.(x).(y) <- Miss in {board_type = b; shot = false; ship_shot = None}
+  
+  let shoot_shield_poss (b : t) (x : int) (y : int) (xs: int)(ys: int) : t'' =
+  if (x = xs) && (y = ys) then 
+    {board_type = b;shot = false; ship_shot = None}
+  else
+    shoot(b)(x)(y)
 
   let get_board (b : t) : occupy array array = b.board
   let get_pos (b : t) (x : int) (y : int) : occupy = b.board.(x).(y)
