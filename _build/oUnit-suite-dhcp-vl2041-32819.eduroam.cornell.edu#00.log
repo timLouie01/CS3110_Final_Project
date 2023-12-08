@@ -1,0 +1,398 @@
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Runner: processes
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Chooser: simple
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration suite_name = "suite"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration cache_filename = "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/oUnit-$(suite_name).cache"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration run_gc_full_major = "true"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration display = "true"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration results_style_1_X = "false"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration testdata_dir = "none"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration health_check_interval = "1."
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration verbose = "false"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration chooser = "simple"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration output_html_dir = "none"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration processes_kill_period = "5."
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration runner = "processes"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration shards = "2"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration processes_grace_period = "5."
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration log_encoding = "utf-8"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration output_junit_file = "none"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration ci = "false"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Configuration output_file = "/Users/timothylouie/Documents/GitHub/Project_0_Degrees/_build/oUnit-$(suite_name)-$(shard_id).log"
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Using 2 workers maximum.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Starting worker number dhcp-vl2041-32819.eduroam.cornell.edu#01.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Worker dhcp-vl2041-32819.eduroam.cornell.edu#01 started.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Starting worker number dhcp-vl2041-32819.eduroam.cornell.edu#02.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Worker dhcp-vl2041-32819.eduroam.cornell.edu#02 started.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:1:get_length carrier, suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:1:get_length carrier, suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:1:get_length carrier, suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:0:get_health carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:1:get_length carrier, suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:1:get_length carrier, suite:0:get_health carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:2:get_type_of_ship carrier, suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:2:get_type_of_ship carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:2:get_type_of_ship carrier, suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:1:get_length carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:2:get_type_of_ship carrier, suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:2:get_type_of_ship carrier, suite:1:get_length carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:3:get_hits carrier, suite:2:get_type_of_ship carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:2:get_type_of_ship carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:3:get_hits carrier, suite:2:get_type_of_ship carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:2:get_type_of_ship carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:3:get_hits carrier, suite:2:get_type_of_ship carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:4:get_sunk carrier, suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:4:get_sunk carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:4:get_sunk carrier, suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:3:get_hits carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:4:get_sunk carrier, suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:4:get_sunk carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:4:get_sunk carrier, suite:3:get_hits carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:4:get_sunk carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:5:get_health battleship, suite:4:get_sunk carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:6:get_length battleship, suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:6:get_length battleship, suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:6:get_length battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:6:get_length battleship, suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:5:get_health battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:6:get_length battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:6:get_length battleship, suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:6:get_length battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:6:get_length battleship, suite:5:get_health battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:8:get_hits battleship, suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:8:get_hits battleship, suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:8:get_hits battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:8:get_hits battleship, suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:7:get_type_of_ship battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:8:get_hits battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:8:get_hits battleship, suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:8:get_hits battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:8:get_hits battleship, suite:7:get_type_of_ship battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:10:get_health destroyer, suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:10:get_health destroyer, suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:10:get_health destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:10:get_health destroyer, suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:9:get_sunk battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:10:get_health destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:10:get_health destroyer, suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:10:get_health destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:10:get_health destroyer, suite:9:get_sunk battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:12:get_type_of_ship destroyer, suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:12:get_type_of_ship destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:12:get_type_of_ship destroyer, suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:12:get_type_of_ship destroyer, suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:11:get_length destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:12:get_type_of_ship destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:12:get_type_of_ship destroyer, suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:12:get_type_of_ship destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:12:get_type_of_ship destroyer, suite:11:get_length destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:14:get_sunk destroyer, suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:14:get_sunk destroyer, suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:14:get_sunk destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:14:get_sunk destroyer, suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:13:get_hits destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:14:get_sunk destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:14:get_sunk destroyer, suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:14:get_sunk destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:14:get_sunk destroyer, suite:13:get_hits destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:16:get_length submarine, suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:16:get_length submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:16:get_length submarine, suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:15:get_health submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:16:get_length submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:16:get_length submarine, suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:16:get_length submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:16:get_length submarine, suite:15:get_health submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:18:get_hits submarine, suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:18:get_hits submarine, suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:18:get_hits submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:18:get_hits submarine, suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:17:get_type_of_ship submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:18:get_hits submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:18:get_hits submarine, suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:18:get_hits submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:18:get_hits submarine, suite:17:get_type_of_ship submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:20:get_health patrol boat, suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:20:get_health patrol boat, suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:20:get_health patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:20:get_health patrol boat, suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:19:get_sunk submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:20:get_health patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:20:get_health patrol boat, suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:20:get_health patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:20:get_health patrol boat, suite:19:get_sunk submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:22:get_type_of_ship patrol boat, suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:22:get_type_of_ship patrol boat, suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:22:get_type_of_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:22:get_type_of_ship patrol boat, suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:21:get_length patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:22:get_type_of_ship patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:22:get_type_of_ship patrol boat, suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:22:get_type_of_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:22:get_type_of_ship patrol boat, suite:21:get_length patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:24:get_sunk patrol boat, suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:24:get_sunk patrol boat, suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:24:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:24:get_sunk patrol boat, suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:23:get_hits patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:24:get_sunk patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:24:get_sunk patrol boat, suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:24:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:24:get_sunk patrol boat, suite:23:get_hits patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:26:hit_ship again patrol boat, suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:26:hit_ship again patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:26:hit_ship again patrol boat, suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:25:hit_ship patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:26:hit_ship again patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:26:hit_ship again patrol boat, suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:26:hit_ship again patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:26:hit_ship again patrol boat, suite:25:hit_ship patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:28:get_sunk patrol boat, suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:28:get_sunk patrol boat, suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:28:get_sunk patrol boat, suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:27:get_hits on sunk patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:28:get_sunk patrol boat, suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:28:get_sunk patrol boat, suite:27:get_hits on sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:29:get_pos patrol boat, suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:29:get_pos patrol boat, suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:28:get_sunk patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:29:get_pos patrol boat, suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:29:get_pos patrol boat, suite:28:get_sunk patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:30:bag get_carrier, suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:30:bag get_carrier, suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:29:get_pos patrol boat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:30:bag get_carrier, suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:30:bag get_carrier, suite:29:get_pos patrol boat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:31:bag get_battleship, suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:31:bag get_battleship, suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:30:bag get_carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:31:bag get_battleship, suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:31:bag get_battleship, suite:30:bag get_carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:32:bag get_destroyer, suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:32:bag get_destroyer, suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:31:bag get_battleship is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:32:bag get_destroyer, suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:32:bag get_destroyer, suite:31:bag get_battleship.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:33:bag get_submarine, suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:33:bag get_submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:33:bag get_submarine, suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:33:bag get_submarine is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:33:bag get_submarine, suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:32:bag get_destroyer is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:33:bag get_submarine.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:33:bag get_submarine, suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:34:bag get_patrolboat, suite:32:bag get_destroyer.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:35:bag list_health, suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:35:bag list_health.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:35:bag list_health, suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:34:bag get_patrolboat is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:35:bag list_health, suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:35:bag list_health, suite:34:bag get_patrolboat.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:36:bag all_sunk, suite:35:bag list_health.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:35:bag list_health is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:36:bag all_sunk, suite:35:bag list_health.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:35:bag list_health.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:36:bag all_sunk, suite:35:bag list_health.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:37:bag all_sunk, suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:37:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:37:bag all_sunk, suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:36:bag all_sunk is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:37:bag all_sunk, suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:37:bag all_sunk, suite:36:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:38:board ocean, suite:37:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:37:bag all_sunk is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:38:board ocean, suite:37:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:37:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:38:board ocean, suite:37:bag all_sunk.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:39:board placed pb head, suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:39:board placed pb head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:39:board placed pb head, suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:38:board ocean is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:39:board placed pb head, suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:39:board placed pb head, suite:38:board ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:39:board placed pb head is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:40:board placed pb tail, suite:39:board placed pb head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:39:board placed pb head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:40:board placed pb tail, suite:39:board placed pb head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:41:board placed carrier head, suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:41:board placed carrier head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:41:board placed carrier head, suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:40:board placed pb tail is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:41:board placed carrier head, suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:41:board placed carrier head, suite:40:board placed pb tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:41:board placed carrier head is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:42:board placed carrier tail, suite:41:board placed carrier head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:41:board placed carrier head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:42:board placed carrier tail, suite:41:board placed carrier head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:43:board check_valid existing pb, suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:43:board check_valid existing pb.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:43:board check_valid existing pb, suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:42:board placed carrier tail is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:43:board check_valid existing pb, suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:43:board check_valid existing pb, suite:42:board placed carrier tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:43:board check_valid existing pb is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:44:board check_valid ocean, suite:43:board check_valid existing pb.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:43:board check_valid existing pb.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:44:board check_valid ocean, suite:43:board check_valid existing pb.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:45:board check_valid existing carrier, suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:45:board check_valid existing carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:45:board check_valid existing carrier, suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:44:board check_valid ocean is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:45:board check_valid existing carrier, suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:45:board check_valid existing carrier, suite:44:board check_valid ocean.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:45:board check_valid existing carrier is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:46:board hit head, suite:45:board check_valid existing carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:45:board check_valid existing carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:46:board hit head, suite:45:board check_valid existing carrier.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:47:board hit tail, suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:47:board hit tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:47:board hit tail, suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:46:board hit head is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:47:board hit tail, suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:47:board hit tail is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:47:board hit tail, suite:46:board hit head.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:47:board hit tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:48:board miss, suite:47:board hit tail.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 2 tests running : suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Start test suite:49:computer board setup.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 2 tests running : suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Start test suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 2 tests running : suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: Test suite:49:computer board setup is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 2 tests running : suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#02 I: End test suite:49:computer board setup.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 2 tests running : suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 2 tests running: suite:49:computer board setup, suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 1 tests running : suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 1 tests running: suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: Test suite:48:board miss is successful.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 1 tests running : suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 1 tests running: suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#01 I: End test suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Still 1 tests running : suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 1 tests running: suite:48:board miss.
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: 0 tests running: .
+2023-12-08T18:57:12+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Worker dhcp-vl2041-32819.eduroam.cornell.edu#02 has ended.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Worker dhcp-vl2041-32819.eduroam.cornell.edu#01 has ended.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Used 2 worker during test execution.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Run 24 tests with shard dhcp-vl2041-32819.eduroam.cornell.edu#02.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Run 26 tests with shard dhcp-vl2041-32819.eduroam.cornell.edu#01.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Check health of shard dhcp-vl2041-32819.eduroam.cornell.edu#02, 4 times.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Check health of shard dhcp-vl2041-32819.eduroam.cornell.edu#01, 1 times.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: ==============
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Summary:
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:48:board miss is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:49:computer board setup is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:47:board hit tail is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:46:board hit head is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:45:board check_valid existing carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:44:board check_valid ocean is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:43:board check_valid existing pb is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:42:board placed carrier tail is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:41:board placed carrier head is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:40:board placed pb tail is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:39:board placed pb head is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:38:board ocean is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:37:bag all_sunk is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:36:bag all_sunk is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:35:bag list_health is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:34:bag get_patrolboat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:32:bag get_destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:33:bag get_submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:31:bag get_battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:30:bag get_carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:29:get_pos patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:28:get_sunk patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:27:get_hits on sunk patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:26:hit_ship again patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:25:hit_ship patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:24:get_sunk patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:23:get_hits patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:22:get_type_of_ship patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:21:get_length patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:20:get_health patrol boat is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:19:get_sunk submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:18:get_hits submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:17:get_type_of_ship submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:16:get_length submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:15:get_health submarine is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:14:get_sunk destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:13:get_hits destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:12:get_type_of_ship destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:11:get_length destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:10:get_health destroyer is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:9:get_sunk battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:8:get_hits battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:7:get_type_of_ship battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:6:get_length battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:5:get_health battleship is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:4:get_sunk carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:3:get_hits carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:2:get_type_of_ship carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:1:get_length carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Test suite:0:get_health carrier is successful.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Ran: 50 tests in: 0.12 seconds.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Cases: 50.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Tried: 50.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Errors: 0.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Failures: 0.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Skip: 0.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Todo: 0.
+2023-12-08T18:57:13+00:00 dhcp-vl2041-32819.eduroam.cornell.edu#00 I: Timeout: 0.

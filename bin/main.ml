@@ -453,9 +453,10 @@ let () =
       print_view ~shield_spotIN:!shielded_pos ())
     else print_endline "";
 
-    (* Print out enemy to end game quick *)
+    (* Print out enemy to end game quick COMMENT OUT BOTTOM 2 LINES
     print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-    PlayerList.list_health (AIComp.get_bag computer_P2);
+    PlayerList.list_health (AIComp.get_bag computer_P2); *)
+
     let next = ref 0 in
     let x1 = ref 0 in
     let y1 = ref 0 in
