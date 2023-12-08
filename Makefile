@@ -27,13 +27,10 @@ clean: bisect-clean
 	dune clean
 	rm -f search.zip
 
-
-doc:
-	dune build @doc
-opendoc: doc
-	@bash opendoc.sh
-
-
+# doc:
+# 	dune build @doc
+# opendoc: doc
+# 	@bash opendoc.sh
 
 zip:
 	rm -f Project_0_Degrees.zip
