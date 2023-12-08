@@ -1,10 +1,11 @@
 Open a terminal for this project and run the following:
-1. dune build 
-2. make game
+1. opam install ANSITerminal
+2. make build 
+3. make game
 
 Then you will be begin the game and be prompted
-to input head and tail coordiantes for each of your
+to input your name, and head and direction for each of your
 5 Ships.
 
-Lastly the program will print out a simple representaiton 
-of your grid.
+Lastly the program will ask you to choose the difficulty of the game and begin the 
+game!

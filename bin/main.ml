@@ -49,13 +49,15 @@ let print_Grid (grid : BattleGround.occupy array array) =
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Hit ->
-          let () = print_string " H |" in
+          let () = T.print_string [ T.Bold; Foreground Red ; Background White ] " H " in
+          let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
           if x = 9 then (
             let () = print_newline () in
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Miss ->
-          let () = print_string " M |" in
+        let () = T.print_string [ T.Bold; Foreground White ; Background Blue ] " M " in
+        let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
           if x = 9 then (
             let () = print_newline () in
             print_string "- -----------------------------------------";
@@ -70,8 +72,8 @@ let print_oneline_grid (grid : BattleGround.occupy array array) (y : int)
       for x = 0 to 9 do
         if x = 0 then print_string (string_of_int y ^ " |") else print_string "";
         if xs = x && ys = y then
-         let () =  T.print_string [ T.Bold; Foreground Magenta ] " ^ " in
-          T.print_string [ T.Bold; Foreground  Yellow] "|"
+          let () = T.print_string [ T.Bold; Foreground Magenta ; Background Cyan] " ^ " in
+           T.print_string [ T.Bold; Foreground White ; Background Black ] "|"
         else
           match Array.get (Array.get grid x) y with
           | BattleGround.Ocean ->
@@ -86,33 +88,35 @@ let print_oneline_grid (grid : BattleGround.occupy array array) (y : int)
               | "Patrol Boat" -> print_string " P |"
               | _ -> print_string "error")
           | BattleGround.Hit ->
-              let () = T.print_string [ T.Bold; Foreground Red ] " H |" in
+            let () = T.print_string [ T.Bold; Foreground Red ; Background White ] " H " in
+            let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
               (* let () = print_string " H |" in *)
               if x = 9 then print_string ""
           | BattleGround.Miss ->
-              let () = print_string " M |" in
+            let () = T.print_string [ T.Bold; Foreground White ; Background Blue ] " M " in
+            let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
               if x = 9 then print_string ""
       done
 
 let print_two_Grid (grid1 : BattleGround.occupy array array)
     (grid2 : BattleGround.occupy array array) ?(shield_spot = (-1, -1)) =
   match shield_spot with
-  | (xs,ys) ->
-  print_endline
-    "  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |       | 0 | 1 | 2 | 3 | 4 | 5 \
-     | 6 | 7 | 8 | 9 |";
-  print_endline
-    "- -----------------------------------------     - \
-     -----------------------------------------";
-  for y = 0 to 9 do
-    print_oneline_grid grid1 y ~shield_spot:(xs,ys);
-    print_string "     ";
-    print_oneline_grid grid2 y ~shield_spot:(-1,-1) ;
-    print_newline ();
-    print_endline
-      "- -----------------------------------------     - \
-       -----------------------------------------"
-  done
+  | xs, ys ->
+      print_endline
+        "  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |       | 0 | 1 | 2 | 3 | 4 \
+         | 5 | 6 | 7 | 8 | 9 |";
+      print_endline
+        "- -----------------------------------------     - \
+         -----------------------------------------";
+      for y = 0 to 9 do
+        print_oneline_grid grid1 y ~shield_spot:(xs, ys);
+        print_string "     ";
+        print_oneline_grid grid2 y ~shield_spot:(-1, -1);
+        print_newline ();
+        print_endline
+          "- -----------------------------------------     - \
+           -----------------------------------------"
+      done
 
 let () =
   Sys.command "clear";
@@ -213,28 +217,29 @@ let () =
 
   Sys.command "clear";
 
-
   let print_view ?(shield_spotIN = (-1, -1)) () =
     match shield_spotIN with
-    | (x,y) ->
-    print_endline "==> Your ship healths: ";
-    PlayerList.list_health p1_ship_bag;
-    print_newline ();
-    print_endline "==> Your number of peeks left:  ";
-    T.print_string [ T.Bold; Foreground Cyan ] (string_of_int !p1_peeks);
-    print_endline "";
-    print_endline "==> Your number of shields left:  ";
-    T.print_string [ T.Bold; Foreground Magenta ] (string_of_int !p1_shields);
-    print_endline "";
-    print_endline "";
-    print_endline
-      "          <<< Your Board >>>                                <<< Enemy's \
-       Board >>>";
-    (print_two_Grid
-      (BattleGround.get_board p1_battle_grid)
-      (BattleGround.get_board p1_tracking_grid)
-      ~shield_spot: (x,y) );
-    print_newline ()
+    | x, y ->
+        print_endline "==> Your ship healths: ";
+        PlayerList.list_health p1_ship_bag;
+        print_newline ();
+        print_endline "==> Your number of peeks left:  ";
+        T.print_string [ T.Bold; Foreground Cyan ] (string_of_int !p1_peeks);
+        print_endline "";
+        print_endline "==> Your number of shields left:  ";
+        T.print_string
+          [ T.Bold; Foreground Magenta ]
+          (string_of_int !p1_shields);
+        print_endline "";
+        print_endline "";
+        print_endline
+          "          <<< Your Board >>>                                <<< \
+           Enemy's Board >>>";
+        print_two_Grid
+          (BattleGround.get_board p1_battle_grid)
+          (BattleGround.get_board p1_tracking_grid)
+          ~shield_spot:(x, y);
+        print_newline ()
   in
 
   let continue = ref true in
@@ -277,10 +282,10 @@ let () =
     let peek = ref false in
     while continue = ref true && !p1_peeks > 0 do
       print_endline
-        "==> Would you like to use one one your two peeks to see where an \
+        "==> Would you like to use one of your two peeks to see where an \
          oppoent's ship might be? Y/N";
       let input_level = String.trim (read_line ()) in
-      match input_level with
+      match String.uppercase_ascii(input_level) with
       | "Y" ->
           peek := true;
           continue := false
@@ -291,15 +296,15 @@ let () =
           print_endline "==> INVALID ANSWER, ANSWER again";
           continue := true
     done;
-    (* Sys.command "clear"; *)
 
+    (* Sys.command "clear"; *)
     let continue = ref true in
     let shield = ref false in
     while continue = ref true && !p1_shields > 0 do
       print_endline
-        "==> Would you like to use one one your 4 shields on a ship? Y/N";
+        "==> Would you like to use one of your 4 shields on a ship? Y/N";
       let input_level = String.trim (read_line ()) in
-      match input_level with
+      match String.uppercase_ascii(input_level) with
       | "Y" ->
           shield := true;
           continue := false
@@ -310,8 +315,8 @@ let () =
           print_endline "==> INVALID ANSWER, ANSWER again";
           continue := true
     done;
-    (* Sys.command "clear"; *)
 
+    (* Sys.command "clear"; *)
     let rec find_hint (list_pos : ((int * int) * bool) list) : int * int =
       match list_pos with
       | ((x, y), b') :: b ->
@@ -329,7 +334,7 @@ let () =
         print_endline
           "==> Which ship would you like to spy on? Enter C for Carrier, B for \
            Battleship, D for Destroyer, S for Submarine, P for Patrol boat";
-        let input_level = String.trim (read_line ()) in
+        let input_level = String.uppercase_ascii(String.trim (read_line ())) in
         match input_level with
         | "C" ->
             let list_of_pos =
@@ -343,8 +348,8 @@ let () =
                   print_endline "==> Unfortunatley their Carrier sunk already"
                 else
                   print_endline
-                    ("==> The opponent has part of their Carrier located at pos: "
-                   ^ string_of_int x1 ^ ", " ^ string_of_int y1));
+                    ("==> The opponent has part of their Carrier located at \
+                      pos: " ^ string_of_int x1 ^ ", " ^ string_of_int y1));
             continue := false
         | "B" ->
             let list_of_pos =
@@ -360,7 +365,7 @@ let () =
                 else
                   print_endline
                     ("==> The opponent has part of their Battleship located at \
-                      pos" ^ string_of_int x1 ^ ", " ^ string_of_int y1));
+                      pos: " ^ string_of_int x1 ^ ", " ^ string_of_int y1));
             continue := false
         | "D" ->
             let list_of_pos =
@@ -375,7 +380,7 @@ let () =
                 else
                   print_endline
                     ("==> The opponent has part of their Destroyer located at \
-                      pos" ^ string_of_int x1 ^ ", " ^ string_of_int y1));
+                      pos: " ^ string_of_int x1 ^ ", " ^ string_of_int y1));
             continue := false
         | "S" ->
             let list_of_pos =
@@ -390,7 +395,7 @@ let () =
                 else
                   print_endline
                     ("==> The opponent has part of their Submarine located at \
-                      pos" ^ string_of_int x1 ^ ", " ^ string_of_int y1));
+                      pos: " ^ string_of_int x1 ^ ", " ^ string_of_int y1));
             continue := false
         | "P" ->
             let list_of_pos =
@@ -406,15 +411,14 @@ let () =
                 else
                   print_endline
                     ("==> The opponent has part of their Patrol boat located \
-                      at pos" ^ string_of_int x1 ^ ", " ^ string_of_int y1));
+                      at pos: " ^ string_of_int x1 ^ ", " ^ string_of_int y1));
             continue := false
         | _ ->
             print_endline "==> INVALID COORDINATES, try again";
             continue := true
       done;
       p1_peeks := !p1_peeks - 1)
-    else
-      print_endline("");
+    else print_endline "";
 
     let shielded_pos = ref (-1, -1) in
     if !shield then (
@@ -426,30 +430,31 @@ let () =
            position? Enter coordinates in the form of x y";
         let input_level = String.trim (read_line ()) in
         match String.split_on_char ' ' input_level with
-        | [ x; y ] ->
-          try 
-          let xInt = int_of_string x in
-          let yInt= int_of_string y in
-            if xInt < 10 && xInt > -1 && yInt < 10 && yInt > -1 then
-            let () = shielded_pos := (xInt,yInt) in
-              (continue := false)
-            else (print_endline "==> INVALID COORDINATES, try again"; continue := true)
-          with Failure "int_of_string" -> print_endline "==> INVALID COORDINATES, try again";
-          continue := true;
-        | _ ->
-            print_endline "==> INVALID COORDINATES, try again";
-            continue := true
+        | [ x; y ] -> (
+            try
+              let xInt = int_of_string x in
+              let yInt = int_of_string y in
+              if xInt < 10 && xInt > -1 && yInt < 10 && yInt > -1 then
+                let () = shielded_pos := (xInt, yInt) in
+                continue := false
+              else (
+                print_endline "==> INVALID COORDINATES, try again";
+                continue := true)
+            with
+            | Failure "int_of_string" ->
+                print_endline "==> INVALID COORDINATES, try again";
+                continue := true
+            | _ ->
+                print_endline "==> INVALID COORDINATES, try again";
+                continue := true)
       done;
       print_endline "Your grid with shield placed that will last 1 round";
       p1_shields := !p1_shields - 1;
-      print_view  ~shield_spotIN:(!shielded_pos) ())
-    else
-      print_endline
-        ("");
+      print_view ~shield_spotIN:!shielded_pos ())
+    else print_endline "";
 
     (* Print out enemy to end game quick *)
     print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-
     PlayerList.list_health (AIComp.get_bag computer_P2);
     let next = ref 0 in
     let x1 = ref 0 in
@@ -474,28 +479,27 @@ let () =
     in
 
     (*Results of Player 1 shots*)
-  
-    let a =  
-    match shoot_result.shot with
+    let a =
+      match shoot_result.shot with
       | true ->
           let () = print_endline "[ You HIT something! ]" in
-          let () = (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
-            BattleGround.Hit in
-          print_view ~shield_spotIN:(!shielded_pos)
+          let () =
+            (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
+              BattleGround.Hit
+          in
+          print_view ~shield_spotIN:!shielded_pos
           (* | false -> let () = print_view() *)
       | false ->
           let () = print_endline "[ You MISSED! :( ]" in
           (BattleGround.get_board p1_tracking_grid).(!x1).(!y1) <-
             BattleGround.Miss;
-           print_view ~shield_spotIN:(!shielded_pos)
-      in
-  
-   let () = a() in
-    (* if
-      AShip.get_health (PlayerList.get_patrolBoat (AIComp.get_bag computer_P2))
-      = 0
-    then *)
-      if PlayerList.all_sunk (AIComp.get_bag computer_P2) = true then
+          print_view ~shield_spotIN:!shielded_pos
+    in
+
+    let () = a () in
+    (* if AShip.get_health (PlayerList.get_patrolBoat (AIComp.get_bag
+       computer_P2)) = 0 then *)
+    if PlayerList.all_sunk (AIComp.get_bag computer_P2) = true then
       let _ = Sys.command "clear" in
       let _ =
         print_Grid (BattleGround.get_board (AIComp.get_board computer_P2))
@@ -512,14 +516,13 @@ let () =
       String.trim (read_line ());
       AIComp.set_board computer_P2 shoot_result.board_type;
       let ai_shot = !difficulty computer_P2 p1_battle_grid !shielded_pos in
-      
-         (* UNCOMMENT TO TEST IF SHIELD PROTECTS THE HEALTH OF A SHIP
-      let ai_shot = AIComp.shoot_shield computer_P2 p1_battle_grid !shielded_pos in *)
 
+      (* UNCOMMENT TO TEST IF SHIELD PROTECTS THE HEALTH OF A SHIP let ai_shot =
+         AIComp.shoot_shield computer_P2 p1_battle_grid !shielded_pos in *)
       if ai_shot.shot then
         match ai_shot.ship_shot with
         | Some a ->
-            print_endline ("and HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
+            print_endline ("[ Computer HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
             (* print_view (); *)
             if PlayerList.all_sunk p1_ship_bag = true then
               (* let _ = Sys.command "clear" in *)
@@ -527,8 +530,8 @@ let () =
               continue_game := false
             else continue_game := true
         | None -> print_endline "==> Unreachable Code"
-      else print_endline "and MISSED! ]";
-      print_view ();)
+      else print_endline "[ Computer MISSED! ]";
+      print_view ())
     else (* let _ = Sys.command "clear" in *)
       print_endline ""
   done
