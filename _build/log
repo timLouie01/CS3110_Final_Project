@@ -1,9 +1,9 @@
-# dune exec test/main.exe
+# dune exec bin/main.exe
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /Users/timothylouie/Documents/GitHub/Project_0_Degrees
 # Auto-detected concurrency: 10
-$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_6d0036_output
+$ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/4m/0mns3dt95p9_kblvyjb1fndh0000gn/T/dune_0d9d02_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -117,3 +117,61 @@ $ /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; windows_unicode = false
 #      }
 #  }
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I /Users/timothylouie/.opam/cs3110-2023fa/lib/ANSITerminal -I /Users/timothylouie/.opam/cs3110-2023fa/lib/bytes -I /Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml/unix -I lib/.Zero_Degrees.objs/byte -I lib/.Zero_Degrees.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+> File "bin/main.ml", line 69, characters 6-28:
+> 69 |     ?(shield_spot = (-1, -1)) =
+>            ^^^^^^^^^^^^^^^^^^^^^^
+> Warning 16 [unerasable-optional-argument]: this optional argument cannot be erased.
+> File "bin/main.ml", line 102, characters 48-70:
+> 102 |     (grid2 : BattleGround.occupy array array) ?(shield_spot = (-1, -1)) =
+>                                                       ^^^^^^^^^^^^^^^^^^^^^^
+> Warning 16 [unerasable-optional-argument]: this optional argument cannot be erased.
+> File "bin/main.ml", line 122, characters 2-21:
+> 122 |   Sys.command "clear";
+>         ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 128, characters 2-21:
+> 128 |   Sys.command "clear";
+>         ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 167, characters 2-21:
+> 167 |   Sys.command "clear";
+>         ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 201, characters 12-31:
+> 201 |             Sys.command "clear";
+>                   ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 218, characters 2-21:
+> 218 |   Sys.command "clear";
+>         ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 267, characters 2-21:
+> 267 |   Sys.command "clear";
+>         ^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+> File "bin/main.ml", line 446, characters 22-37:
+> 446 |             | Failure "int_of_string" ->
+>                             ^^^^^^^^^^^^^^^
+> Warning 52 [fragile-literal-pattern]: Code should not depend on the actual values of
+> this constructor's arguments. They are only for information
+> and may change in future versions. (See manual section 13.5)
+> File "bin/main.ml", lines 434-451, characters 8-33:
+> 434 | ........match String.split_on_char ' ' input_level with
+> 435 |         | [ x; y ] -> (
+> 436 |             try
+> 437 |               let xInt = int_of_string x in
+> 438 |               let yInt = int_of_string y in
+> ...
+> 448 |                 continue := true
+> 449 |             | _ ->
+> 450 |                 print_endline "==> INVALID COORDINATES, try again";
+> 451 |                 continue := true)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> _::_::_::_
+> File "bin/main.ml", line 519, characters 6-32:
+> 519 |       String.trim (read_line ());
+>             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> Warning 10 [non-unit-statement]: this expression should have type unit.
+$ (cd _build/default && /Users/timothylouie/.opam/cs3110-2023fa/bin/ocamlopt.opt -w +a-4-6-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -warn-error -a+31 -g -o bin/main.exe /Users/timothylouie/.opam/cs3110-2023fa/lib/ocaml/unix/unix.cmxa /Users/timothylouie/.opam/cs3110-2023fa/lib/ANSITerminal/ANSITerminal.cmxa -I /Users/timothylouie/.opam/cs3110-2023fa/lib/ANSITerminal lib/Zero_Degrees.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)

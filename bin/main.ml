@@ -226,7 +226,9 @@ let () =
         print_endline "==> Your number of peeks left:  ";
         T.print_string [ T.Bold; Foreground Cyan ] (string_of_int !p1_peeks);
         print_endline "";
-        print_endline "==> Your number of shields left:  ";
+        print_string "==> Your number of shields left:  Represented by = ";
+        T.print_string [ T.Bold; Foreground Magenta ; Background Cyan] " ^ ";
+        print_endline "";
         T.print_string
           [ T.Bold; Foreground Magenta ]
           (string_of_int !p1_shields);
@@ -453,8 +455,8 @@ let () =
       print_view ~shield_spotIN:!shielded_pos ())
     else print_endline "";
 
-    (* Print out enemy to end game quick COMMENT OUT BOTTOM 2 LINES
-    print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
+    (* Print out enemy to end game quick COMMENT OUT BOTTOM 2 LINES *)
+    (* print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
     PlayerList.list_health (AIComp.get_bag computer_P2); *)
 
     let next = ref 0 in
