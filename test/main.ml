@@ -4,6 +4,12 @@ open Zero_Degrees
 let pretty_string s = "\"" ^ s ^ "\""
 let pretty_int n = "\"" ^ string_of_int n ^ "\""
 let pretty_bool b = "\"" ^ string_of_bool b ^ "\""
+let rec pretty_pos_list l = 
+  let rec inner list = match list with 
+    | ((x,y),b) :: t -> "((" ^ string_of_int x ^ "," ^ string_of_int y ^ ")" 
+      ^ ", " ^ string_of_bool b ^ "); " ^ inner t 
+    | [] -> "" in 
+  "\"(" ^ inner l ^ ")\""
 
 module X = Zero_Degrees.Ship.AShip
 let samplecarrier = X.build_ship "Carrier"
@@ -15,7 +21,25 @@ let samplepb2 = X.build_ship "Patrol Boat"
 let setpb = X.set_position samplepb2 0 0 1 0
 let healthpb = X.hit_ship samplepb2 (0, 0)
 let healthpb2 = X.hit_ship samplepb2 (1, 0)
+let setsub = X.set_position samplesub 4 6 4 4
 let sampleerror = X.build_ship "PatrolBoat"
+let samplepospb = 
+  let accum = ref [] in 
+    let y = 0 in 
+      for x = 0 to 10 do 
+        if (x=1 && y=0) || (x=0 && y=0) then 
+          accum := !accum @ [((x,y),false)]
+      done; !accum
+  
+let samplepossub = 
+  let accum = ref [] in 
+    for x = 0 to 10 do 
+      for y = 0 to 10 do 
+        if (x=4 && y=6) || (x=4 && y=5) || (x=4 && y=4) then 
+          accum := [((x,y),false)] @ !accum
+      done; 
+    done; !accum
+
 let ship_tests =
   [
     ( "get_health carrier" >:: fun _ ->
@@ -96,6 +120,12 @@ let ship_tests =
     ( "hit_ship error" >:: fun _ ->
       assert_equal ~printer:pretty_int (3) 
       (X.hit_ship sampledestroyer (15, 15)) );
+    ( "get_pos patrol boat" >:: fun _ ->
+        assert_equal ~printer:pretty_pos_list 
+          samplepospb (X.get_pos_list samplepb) );  
+    ( "get_pos submarine" >:: fun _ ->
+        assert_equal ~printer:pretty_pos_list 
+          samplepossub (X.get_pos_list samplesub) );  
   ]
 
 module SB = Zero_Degrees.ShipsBag.PlayerList
