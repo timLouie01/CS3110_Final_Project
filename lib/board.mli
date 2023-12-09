@@ -1,3 +1,4 @@
+
 open Ship
 
 (* The signature of the GameBoard *)
@@ -10,7 +11,11 @@ module type GameBoard = sig
     added : bool;
   }
 
-  type t'' = {board_type: t; mutable shot: bool; ship_shot: AShip.t option}
+  type t'' = {
+    board_type : t;
+    mutable shot : bool;
+    ship_shot : AShip.t option;
+  }
 
   (* Variant Data type at a position *)
   type occupy =
@@ -19,42 +24,42 @@ module type GameBoard = sig
     | Hit
     | Miss
 
-  (* Creates GameBoard of length and width = inputted integer [set_board l]
-     Returns: Returns GameBoard representaiton Requires: l >= 10 SideEffect:
-     sets n = l *)
   val set_up_board : occupy -> t
+  (** [set_up_board] Creates GameBoard of 10x10 dimmensions with every position
+      occupied by the Ocean data type. Requires: occupy data type is Ocean.
+      Returns: Empty gameBoard representation.*)
 
-  (* Given x and y coordinates this function checks to see if these positions
-     are valid positons in the grid Returns: True if 0 <= x < n and 0 <= y < n
-     and False otherwise where n = "size" of GameBoard *)
-  (* val valid_pos : int -> int -> t -> bool *)
-
-  (* Given a ship type places the ship with its head at the inputted head
-     coordinate and returns a list of valid position for the tail of the given
-     ship type to be [place_ship (x) (y)] Requires: That the position x,y is a
-     valid and that the ship typed inputted has not already been placed position
-     in the graph. Also that ship inputted has not already been placed Returns:
-     List of possible locaitons to have the tail of the ship be *)
-  (* val ship_positons : occupy -> int -> int -> t -> int list *)
-
-  (* Given a ship type places the ship with its head at the inputted head
-     coordinate and returns a list of valid positions for the tail of the given
-     ship type to be [place_ship (x) (y)] Requires: That the position x,y is a
-     valid position in the graph. Also that ship inputted has not already been
-     placed Returns: The number of ships left to add to the grid *)
   val check_valid : t -> AShip.t -> int -> int -> int -> int -> bool
-  val place_ship : t -> AShip.t -> int -> int -> int -> int -> t'
+  (** [check_valid board ship x y] Given a ship type places the ship with its
+      head at the inputted head coordinate and returns a list of valid positions
+      for the tail of the given ship type to be [place_ship (x) (y)] Requires:
+      That the position x,y is a valid position in the graph. Also that ship
+      inputted has not already been placed Returns: The number of ships left to
+      add to the grid *)
 
-  
+  val place_ship : t -> AShip.t -> int -> int -> int -> int -> t'
+  (** [place_ship board ship x1 y1 x2 y2] Places ship on the board between and
+      including the specified coordinates. Requires: Coordinates x1, y1 and x2,
+      y2 are valid head and tails positions for the specified ship type.
+      Returns: Board with the ship placed in position.*)
+
   val shoot : t -> int -> int -> t''
+  (** [shoot board x y] Shoots at position x,y on the board. Requires: That the
+      position x,y is a valid position in the graph. Returns: a board with the
+      shot on the board.*)
+
   val shoot_shield_poss : t -> int -> int -> int -> int -> t''
-  (** Given x and y coordinates this function searches to see if there is a ship
-      at that position in the graph and if so shoots/hits that part of the ship
-      [shoot x y] Requires: That the position x,y is a valid position in the
-      graph Returns: True if part of a ship is at the inputted positon (x,y) in
-      the GameBoard and False otherwise *)
+  (** [shoot_shield_poss board x1 y1 x2 y2] Checks if the position shot at is
+      the same position being shielded in that round. Requires: Coordinate x1,
+      y2 and x2, y2 are valid positions on the board. Returns: *)
+
   val get_board : t -> occupy array array
+  (** [get_board board] Requires: Input a valid board. Returns: 2D Array of
+      board positions and/or states.*)
+
   val get_pos : t -> int -> int -> occupy
+  (** [get_pos board x y] Requires: Input valid coordinate x and y on the board
+      Returns: The occupy data type of the coordinate of the board.*)
 end
 
 module BattleGround : GameBoard
