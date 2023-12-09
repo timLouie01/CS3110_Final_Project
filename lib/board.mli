@@ -60,6 +60,12 @@ module type GameBoard = sig
   val get_pos : t -> int -> int -> occupy
   (** [get_pos board x y] Requires: Input valid coordinate x and y on the board
       Returns: The occupy data type of the coordinate of the board.*)
+
+  val get_added : t' -> bool
+  (** [get_added b] Requires: Input valid board of type t'
+      Returns: The boolean value stored in record field added of a record b
+      of type t'. *)
+
 end
 
 module BattleGround : GameBoard

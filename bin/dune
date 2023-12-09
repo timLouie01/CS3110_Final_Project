@@ -1,3 +1,5 @@
 (executable
  (name main)
- (libraries Zero_Degrees))
+ (libraries Zero_Degrees)
+ (instrumentation
+  (backend bisect_ppx)))

@@ -23,6 +23,8 @@ module type GameBoard = sig
   val shoot_shield_poss : t -> int -> int -> int -> int -> t''
   val get_board : t -> occupy array array
   val get_pos : t -> int -> int -> occupy
+  val get_added : t' -> bool
+
 end
 
 module BattleGround : GameBoard = struct
@@ -117,6 +119,7 @@ module BattleGround : GameBoard = struct
 
   let get_board (b : t) : occupy array array = b.board
   let get_pos (b : t) (x : int) (y : int) : occupy = b.board.(x).(y)
+  let get_added (b : t') = b.added
 end
 
 (* module BattleGround2:GameBoard = struct include BattleGround1 end *)
