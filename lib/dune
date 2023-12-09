@@ -1,4 +1,6 @@
 (library
  (name Zero_Degrees)
  (public_name Zero_Degrees)
- (libraries ANSITerminal))
+ (libraries ANSITerminal)
+ (instrumentation
+  (backend bisect_ppx)))

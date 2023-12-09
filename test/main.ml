@@ -15,19 +15,7 @@ let samplepb2 = X.build_ship "Patrol Boat"
 let setpb = X.set_position samplepb2 0 0 1 0
 let healthpb = X.hit_ship samplepb2 (0, 0)
 let healthpb2 = X.hit_ship samplepb2 (1, 0)
-
-(* Functions that create a 10x10 list, as returned by set_position *)
-(* let rec range min max = if min > max then [] else min :: range (min + 1) max
-
-let pblist = let range = range 0 9 in List.concat (List.map (fun x ->
-List.map (fun y -> (x, y)) range) range) *)
-
-let pbaddbool x =
-  match x with
-  | a, b ->
-      if (a = 0 && b = 0) || (a = 0 && b = 1) then ((a, b), false)
-      else ((a, b), true)
-
+let sampleerror = X.build_ship "PatrolBoat"
 let ship_tests =
   [
     ( "get_health carrier" >:: fun _ ->
@@ -100,6 +88,14 @@ let ship_tests =
       assert_equal ~printer:pretty_bool true (X.get_sunk samplepb2) );
     ( "get_pos patrol boat" >:: fun _ ->
       assert_equal ~printer:pretty_bool true (X.get_pos samplepb2 0 0) );
+    
+    ( "get_length error" >:: fun _ ->
+      assert_equal ~printer:pretty_int (0) (X.get_length sampleerror) );
+    ( "get_health error" >:: fun _ ->
+      assert_equal ~printer:pretty_int (0) (X.get_health sampleerror) );
+    ( "hit_ship error" >:: fun _ ->
+      assert_equal ~printer:pretty_int (3) 
+      (X.hit_ship sampledestroyer (15, 15)) );
   ]
 
 module SB = Zero_Degrees.ShipsBag.PlayerList
@@ -182,6 +178,10 @@ let places = B.place_ship sampleboard samplesub2 3 0 3 2
 let shotsub = B.shoot sampleboard 3 0
 let shotsubt = B.shoot sampleboard 3 2
 let shotocean = B.shoot sampleboard 9 9
+let placeerror = B.place_ship sampleboard sampledestroyer 10 10 10 12
+let shotsubtwice = [B.shoot sampleboard 3 1; B.shoot sampleboard 3 1]
+let shotoceantwice = [B.shoot sampleboard 7 8; B.shoot sampleboard 7 8]
+
 let board_tests = [
   ( "board ocean" >:: fun _ ->
     assert_equal (B.Ocean) (B.get_pos sampleboard 5 5) );
@@ -208,17 +208,32 @@ let board_tests = [
       assert_equal (B.Hit) (B.get_pos sampleboard 3 2) );
   ( "board miss" >:: fun _ -> 
     assert_equal (B.Miss) (B.get_pos sampleboard 9 9) );
+  ( "board valid placement" >:: fun _ -> 
+    assert_equal (true) (B.get_added places) );
+  ( "board placement error" >:: fun _ -> 
+    assert_equal (false) (B.get_added placeerror) );
+  ( "board shot previous hit location" >:: fun _ -> 
+    assert_equal (B.Miss) (B.get_pos sampleboard 3 1) );
+  ( "board shot previous miss location" >:: fun _ -> 
+    assert_equal (B.Miss) (B.get_pos sampleboard 7 8) );
 ]
 
 module C = Zero_Degrees.Computer.AIComp
-let sampleboardai = C.set_board_ai (C.create_ai)
 let samplebg = B.set_up_board Ocean
-let samplebag3 = SB.build_bag 3
+let samplebag3 = SB.build_bag 5
+let samplebg2 = B.set_up_board Ocean 
+let samplepb3 = X.build_ship "Patrol Boat"
+let placepb= B.place_ship samplebg2 samplepb3 9 9 9 8 
+
 let computer_tests = [
+  ( "computer get_board" >:: fun _ -> 
+    assert_equal (samplebg) (C.get_board C.create_ai) );
+  ( "computer get_bag" >:: fun _ -> 
+    assert_equal (samplebag3) (C.get_bag C.create_ai) );
   ( "computer board setup" >:: fun _ -> 
-    assert_equal () sampleboardai );
-  (* ( "computer get_bag" >:: fun _ -> 
-    assert_equal (samplebag3) (C.get_bag C.create_ai) ); *)
+    assert_equal () (C.set_board_ai (C.create_ai)) );
+  ( "computer set_board" >:: fun _ -> 
+    assert_equal () (C.set_board C.create_ai samplebg) );
 ]
 
 let suite =

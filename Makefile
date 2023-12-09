@@ -18,7 +18,6 @@ utop:
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
 
-
 bisect: bisect-clean
 	-dune exec --instrument-with bisect_ppx --force test/main.exe
 	bisect-ppx-report html
@@ -29,7 +28,6 @@ bisect-clean:
 clean: bisect-clean
 	dune clean
 	rm -f search.zip
-
 
 zip:
 	rm -f Project_0_Degrees.zip
