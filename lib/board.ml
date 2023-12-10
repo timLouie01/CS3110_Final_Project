@@ -1,9 +1,7 @@
 open Ship
 open ShipsBag
 
-(* The signature of the GameBoard *)
-(* My Board = Ocean and Ship and HitShip *)
-(* Oppoent Baord = Ocean and Hit misses*)
+
 module type GameBoard = sig
   type occupy =
     | Ocean
@@ -38,6 +36,8 @@ module BattleGround : GameBoard = struct
     board : occupy array array;
     size : int;
   }
+  (** AF: Record of 2 fields that are a 2d array and an integer of the size of the board represent
+     the gameboard of 1 player RI: size = 10 *)
 
   type t' = {board_type: t; added: bool}
 
@@ -122,4 +122,4 @@ module BattleGround : GameBoard = struct
   let get_added (b : t') = b.added
 end
 
-(* module BattleGround2:GameBoard = struct include BattleGround1 end *)
+

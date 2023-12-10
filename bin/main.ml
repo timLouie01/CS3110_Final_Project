@@ -49,15 +49,23 @@ let print_Grid (grid : BattleGround.occupy array array) =
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Hit ->
-          let () = T.print_string [ T.Bold; Foreground Red ; Background White ] " H " in
-          let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
+          let () =
+            T.print_string [ T.Bold; Foreground Red; Background White ] " H "
+          in
+          let () =
+            T.print_string [ T.Bold; Foreground White; Background Black ] "|"
+          in
           if x = 9 then (
             let () = print_newline () in
             print_string "- -----------------------------------------";
             print_endline "")
       | BattleGround.Miss ->
-        let () = T.print_string [ T.Bold; Foreground White ; Background Blue ] " M " in
-        let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
+          let () =
+            T.print_string [ T.Bold; Foreground White; Background Blue ] " M "
+          in
+          let () =
+            T.print_string [ T.Bold; Foreground White; Background Black ] "|"
+          in
           if x = 9 then (
             let () = print_newline () in
             print_string "- -----------------------------------------";
@@ -72,8 +80,10 @@ let print_oneline_grid (grid : BattleGround.occupy array array) (y : int)
       for x = 0 to 9 do
         if x = 0 then print_string (string_of_int y ^ " |") else print_string "";
         if xs = x && ys = y then
-          let () = T.print_string [ T.Bold; Foreground Magenta ; Background Cyan] " ^ " in
-           T.print_string [ T.Bold; Foreground White ; Background Black ] "|"
+          let () =
+            T.print_string [ T.Bold; Foreground Magenta; Background Cyan ] " ^ "
+          in
+          T.print_string [ T.Bold; Foreground White; Background Black ] "|"
         else
           match Array.get (Array.get grid x) y with
           | BattleGround.Ocean ->
@@ -88,13 +98,29 @@ let print_oneline_grid (grid : BattleGround.occupy array array) (y : int)
               | "Patrol Boat" -> print_string " P |"
               | _ -> print_string "error")
           | BattleGround.Hit ->
-            let () = T.print_string [ T.Bold; Foreground Red ; Background White ] " H " in
-            let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
+              let () =
+                T.print_string
+                  [ T.Bold; Foreground Red; Background White ]
+                  " H "
+              in
+              let () =
+                T.print_string
+                  [ T.Bold; Foreground White; Background Black ]
+                  "|"
+              in
               (* let () = print_string " H |" in *)
               if x = 9 then print_string ""
           | BattleGround.Miss ->
-            let () = T.print_string [ T.Bold; Foreground White ; Background Blue ] " M " in
-            let () = T.print_string [ T.Bold; Foreground White ; Background Black ] "|" in
+              let () =
+                T.print_string
+                  [ T.Bold; Foreground White; Background Blue ]
+                  " M "
+              in
+              let () =
+                T.print_string
+                  [ T.Bold; Foreground White; Background Black ]
+                  "|"
+              in
               if x = 9 then print_string ""
       done
 
@@ -121,7 +147,7 @@ let print_two_Grid (grid1 : BattleGround.occupy array array)
 let () =
   Sys.command "clear";
   print_endline "-------------------------------------------";
-  print_endline "==> Welcome to the Artic Battleship Game!";
+  print_endline "==> Welcome to the Modern Battleship Game!";
   print_string "==> Player 1 please input your name: ";
   let player_1_name = String.trim (read_line ()) in
 
@@ -227,7 +253,7 @@ let () =
         T.print_string [ T.Bold; Foreground Cyan ] (string_of_int !p1_peeks);
         print_endline "";
         print_string "==> Your number of shields left:  Represented by = ";
-        T.print_string [ T.Bold; Foreground Magenta ; Background Cyan] " ^ ";
+        T.print_string [ T.Bold; Foreground Magenta; Background Cyan ] " ^ ";
         print_endline "";
         T.print_string
           [ T.Bold; Foreground Magenta ]
@@ -287,7 +313,7 @@ let () =
         "==> Would you like to use one of your two peeks to see where an \
          oppoent's ship might be? Y/N";
       let input_level = String.trim (read_line ()) in
-      match String.uppercase_ascii(input_level) with
+      match String.uppercase_ascii input_level with
       | "Y" ->
           peek := true;
           continue := false
@@ -306,7 +332,7 @@ let () =
       print_endline
         "==> Would you like to use one of your 4 shields on a ship? Y/N";
       let input_level = String.trim (read_line ()) in
-      match String.uppercase_ascii(input_level) with
+      match String.uppercase_ascii input_level with
       | "Y" ->
           shield := true;
           continue := false
@@ -336,7 +362,7 @@ let () =
         print_endline
           "==> Which ship would you like to spy on? Enter C for Carrier, B for \
            Battleship, D for Destroyer, S for Submarine, P for Patrol boat";
-        let input_level = String.uppercase_ascii(String.trim (read_line ())) in
+        let input_level = String.uppercase_ascii (String.trim (read_line ())) in
         match input_level with
         | "C" ->
             let list_of_pos =
@@ -457,8 +483,7 @@ let () =
 
     (* Print out enemy to end game quick COMMENT OUT BOTTOM 2 LINES *)
     (* print_Grid (BattleGround.get_board (AIComp.get_board computer_P2));
-    PlayerList.list_health (AIComp.get_bag computer_P2); *)
-
+       PlayerList.list_health (AIComp.get_bag computer_P2); *)
     let next = ref 0 in
     let x1 = ref 0 in
     let y1 = ref 0 in
@@ -525,7 +550,8 @@ let () =
       if ai_shot.shot then
         match ai_shot.ship_shot with
         | Some a ->
-            print_endline ("[ Computer HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
+            print_endline
+              ("[ Computer HIT your " ^ AShip.get_type_of_ship a ^ "! ]");
             (* print_view (); *)
             if PlayerList.all_sunk p1_ship_bag = true then
               (* let _ = Sys.command "clear" in *)

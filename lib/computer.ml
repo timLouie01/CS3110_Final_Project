@@ -22,6 +22,8 @@ module AIComp : comp = struct
     mutable board : BattleGround.t;
     mutable ship_bag : PlayerList.t;
   }
+  (** AF: Record that has fields hits, misses, board, and ship_bag and represents
+     all the information about the computer opponent. RI: The ship_bag has only 5 ships *)
 
   let ships_to_place =
     [

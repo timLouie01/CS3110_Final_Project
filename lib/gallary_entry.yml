@@ -1,0 +1,34 @@
+---
+# Members of your group.
+group:
+  - name: Timothy Louie
+    netid: tjl96
+  - name: Cynthia Li
+    netid: csl97
+  - name: Luke Shao
+    netid: lys8
+# Your PM.
+pm:
+  name: Cassidy Langenfeld
+  netid: cml297
+# Set to false if you don't want your gallery entry to be public.
+publish: true
+# Pithy title
+title: "Modern BattleShip Game"
+# OK if this is a Cornell Github link, but public gallery viewers won't be able to see it.
+git-repo: "https://github.coecis.cornell.edu/tjl96/Project_0_Degrees"
+# If you have no demo screencast, replace the url string with an empty string ""
+demo-video-url: ""
+# Write a short, attention-grabbing description of your project.
+desc: >
+  Our project is the game of battleship. It enables a user to play the classic 
+  game at 2 levels of difficulty with some modern added abilities. 
+  These abilities include shielding a ship at a position for 1 round or 
+  peeking at one of the opponent's ships. Playing against our program, the 
+  player will be able to set the positions of each of their ships, 
+  choose positions to shoot on the computer opponent's board, 
+  and moderate their usage of their shield and peek powers.
+
+  This game will be played in the terminal and will enable the user to see their 
+  board with shields shown if used and a blank version of the opponent's board 
+  (AKA the tracking board) with the shots/hits they've already played. 
