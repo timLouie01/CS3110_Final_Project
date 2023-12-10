@@ -1,11 +1,15 @@
 (* Test Plan: - The Board, Ship, and ShipBag modules were tested automatically
-   while the pretty printing, user interface, and the computer module were
-   tested by group members playing the game. Also the color printing to the terminal
-   with the help of the ANSITerminal library was tested manually. - These modules were tested via
-   some black box and glass box testing. - Our testing approach demonstrates the
-   correctness of the system as we achieved the following bisect coverage for
-   the modules we tested with OUnit: 1) board.ml 93% 2) ship.ml 95% 3)
-   shipsBag.ml 100% 4) main.ml 100% *)
+   by OUnit while the pretty printing, user interface, and the Computer module
+   were tested maunally by group members playing the game (seeing the expected
+   vs. actual output in terminal). Also, the color printing to the terminal with
+   the help of the ANSITerminal library was tested manually (seeing the correct
+   colors in terminal output). The modules were tested via glass box testing,
+   ensuring that all branches, pathes etc. had complete testing coverage. This
+   was done with the help of bisect, and ensured that all edge cases etc. were
+   adequetely considered. Our testing approach demonstrates the correctness of
+   the system as we achieved the following bisect coverage for the modules we
+   tested with OUnit: 1) board.ml 93% 2) ship.ml 95% 3) shipsBag.ml 100% *)
+
 open OUnit2
 open Zero_Degrees
 
